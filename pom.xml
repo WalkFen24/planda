@@ -38,6 +38,13 @@
       <scope>test</scope>
     </dependency>              </dependencies>
 
+  <repositories>
+    <repository>
+      <id>gluon-nexus-repository</id>
+      <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+    </repository>
+  </repositories>
+
   <build>
         <plugins>
             <plugin>
@@ -58,7 +65,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.ia.planda/com.ia.planda.HelloApplication</mainClass>
+              <mainClass>com.ia.planda/com.ia.planda.Main</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
