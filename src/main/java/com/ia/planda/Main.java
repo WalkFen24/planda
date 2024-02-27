@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("focus-screen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("task-list-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Planda Task List");
         stage.setScene(scene);
