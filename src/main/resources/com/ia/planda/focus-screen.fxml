@@ -5,16 +5,17 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusSetupScreen">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusSetupScreen">
    <children>
       <ButtonBar fx:id="buttonBar2" buttonMinWidth="50.0" buttonOrder="U" layoutX="1.0" layoutY="520.0" prefHeight="40.0" prefWidth="335.0">
          <buttons>
-            <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5cd68d;" text="End" />
-            <Button fx:id="startButton1" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5cd68d;" text="Add time" />
+            <Button fx:id="endButton" mnemonicParsing="false" onAction="#onEndButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5cd68d;" text="End" />
+            <Button fx:id="addTimeButton" mnemonicParsing="false" onAction="#onAddTimeButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5cd68d;" text="Add time" />
          </buttons>
          <opaqueInsets>
             <Insets />
@@ -31,8 +32,11 @@
             <Insets />
          </opaqueInsets>
       </ButtonBar>
-      <ImageView fitHeight="390.0" fitWidth="297.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <ProgressBar layoutX="8.0" layoutY="490.0" prefHeight="25.0" prefWidth="319.0" progress="0.44" />
+      <ImageView fitHeight="248.0" fitWidth="235.0" layoutX="78.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Downloads/panda%20front.png" />
+         </image></ImageView>
+      <ProgressBar fx:id="progressBar" layoutX="8.0" layoutY="490.0" prefHeight="25.0" prefWidth="319.0" progress="0.15" />
       <Label layoutX="125.0" layoutY="469.0" text="Time remaining:" />
       <Label fx:id="timeLabel" layoutX="137.0" layoutY="487.0" text="10 min">
          <font>
