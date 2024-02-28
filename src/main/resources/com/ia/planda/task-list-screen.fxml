@@ -13,15 +13,15 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="11.0" layoutY="13.0" prefHeight="507.0" prefWidth="312.0">
+      <ScrollPane hbarPolicy="NEVER" hmax="0.25" hmin="0.25" hvalue="0.25" layoutX="11.0" layoutY="13.0" prefHeight="507.0" prefWidth="312.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
                   <VBox prefHeight="517.0" prefWidth="303.0" spacing="7.0">
                      <children>
-                      <TitledPane text="Task 1" wrapText="true">
+                      <TitledPane fx:id="taskPane" text="Task 1" wrapText="true">
                         <content>
                           <AnchorPane minWidth="0.0" prefWidth="300.0">
                                  <children>
@@ -36,11 +36,8 @@
                                                 <Label text="Goal time per day: " />
                                                 <TextField prefHeight="25.0" prefWidth="184.0" promptText="time in minutes" />
                                              </children>
-                                             <padding>
-                                                <Insets left="3.0" />
-                                             </padding>
                                           </FlowPane>
-                                          <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="300.0" promptText="Task details" wrapText="true" />
+                                          <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="277.0" promptText="Task details" wrapText="true" />
                                           <ButtonBar fx:id="taskButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
                                              <buttons>
                                                 <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClicked" text="Delete" />
