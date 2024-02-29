@@ -26,8 +26,8 @@ public class TaskListScreen {
     public Button taskListButton;
     @FXML
     public Button addButton;
-    @FXML
-    public Button deleteButton;
+    //@FXML
+    //public Button deleteButton;
     @FXML
     public VBox vbox;
     //@FXML
@@ -39,10 +39,13 @@ public class TaskListScreen {
     public TaskListScreen() {
     }
 
-    public void onDeleteButtonClicked(ActionEvent event) {
+    /*public void onDeleteButtonClicked(ActionEvent event) {
         //vbox.getChildren().remove();
         numTasks--;
+        System.out.println(numTasks);
     }
+
+     */
 
     public void onCompleteButtonClicked(ActionEvent event) {
         numTasks--;
@@ -53,6 +56,8 @@ public class TaskListScreen {
         //adds another task pane to the Vbox
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
         numTasks++;
+        System.out.println(numTasks);
+        System.out.println(vbox.getChildren().get(0).getClass());
     }
 
     public void onTaskListButtonClicked(ActionEvent event) throws IOException {

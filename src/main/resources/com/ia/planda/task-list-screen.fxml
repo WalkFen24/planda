@@ -42,7 +42,7 @@
                                                 <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="277.0" promptText="Task details" wrapText="true" />
                                                 <ButtonBar fx:id="taskButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
                                                    <buttons>
-                                                      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClicked" text="Delete" />
+                                                      <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
                                                       <Button fx:id="Complete" mnemonicParsing="false" onAction="#onCompleteButtonClicked" text="Complete" />
                                                    </buttons>
                                                    <opaqueInsets>

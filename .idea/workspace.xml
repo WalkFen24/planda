@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="in class update">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +68,26 @@
       <recent name="com.ia.planda" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ia.planda.Main" />
+      <module name="planda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ia.planda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -116,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709159993773</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="workspace fix">
+      <created>1709231264642</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709231264642</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,9 +165,9 @@
     <MESSAGE value="commit 2.5 - added main" />
     <MESSAGE value="workspace commit" />
     <MESSAGE value="UI update - focus and tasklist screens" />
-    <MESSAGE value="workspace fix" />
     <MESSAGE value="in class update" />
-    <option name="LAST_COMMIT_MESSAGE" value="in class update" />
+    <MESSAGE value="workspace fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
