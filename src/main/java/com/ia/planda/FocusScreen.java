@@ -3,14 +3,18 @@ package com.ia.planda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class FocusScreen {
+public class FocusScreen implements Initializable {
     @FXML
     public Button endButton;
     @FXML
@@ -21,6 +25,10 @@ public class FocusScreen {
     public Button focusButton;
     @FXML
     public Button taskListButton;
+    @FXML
+    public Label timeLabel;
+    Model model = new Model();
+
 
     public void onEndButtonClicked(ActionEvent event) {
     }
@@ -46,5 +54,11 @@ public class FocusScreen {
     }
 
     public void onRewardsButtonClicked(ActionEvent event) {
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        timeLabel.setText(model.getInitFocusTime() + " min");
+        progressBar.setProgress(1);
     }
 }
