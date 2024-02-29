@@ -1,16 +1,20 @@
 package com.ia.planda;
 
-//import com.gluonhq.charm.glisten.control.BottomNavigationButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class TaskListScreen {
 
@@ -24,16 +28,31 @@ public class TaskListScreen {
     public Button addButton;
     @FXML
     public Button deleteButton;
+    @FXML
+    public VBox vbox;
+    //@FXML
+    //public AnchorPane taskAnchor;
+
+    int numTasks = 1;
+    int completeTasks = 0;
+
+    public TaskListScreen() {
+    }
 
     public void onDeleteButtonClicked(ActionEvent event) {
+        //vbox.getChildren().remove();
+        numTasks--;
     }
 
     public void onCompleteButtonClicked(ActionEvent event) {
+        numTasks--;
+        completeTasks++;
     }
 
-    public void onAddButtonClicked(ActionEvent event) {
+    public void onAddButtonClicked(ActionEvent event) throws IOException {
         //adds another task pane to the Vbox
-        //TitledPane taskPane2 = (TitledPane)taskPane.clone();
+        vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        numTasks++;
     }
 
     public void onTaskListButtonClicked(ActionEvent event) throws IOException {
@@ -55,4 +74,5 @@ public class TaskListScreen {
 
     public void onRewardsButtonClicked(ActionEvent event) {
     }
+
 }
