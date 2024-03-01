@@ -2,16 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
    <children>
@@ -20,7 +18,8 @@
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
                   <VBox fx:id="vbox" prefHeight="517.0" prefWidth="303.0" spacing="7.0">
-                     <children>
+                     <!--
+                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
                             <TitledPane fx:id="taskPane" wrapText="true">
@@ -67,6 +66,7 @@
                            </children>
                         </AnchorPane>
                      </children>
+                     -->
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -75,24 +75,45 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <ButtonBar fx:id="buttonBar2" buttonMinWidth="50.0" buttonOrder="" layoutX="1.0" layoutY="520.0" prefHeight="40.0" prefWidth="322.0">
-         <buttons>
-            <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddButtonClicked" text="Add Task" />
-         </buttons>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </ButtonBar>
-      <ButtonBar fx:id="buttonBar" buttonMinWidth="50.0" buttonOrder="U+L_HE+FBIX_NCYOA_R" layoutY="560.0" prefHeight="40.0" prefWidth="335.0" style="-fx-background-color: #00A36C;">
-        <buttons>
-          <Button fx:id="taskListButton" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Task List" />
-            <Button fx:id="motiveButton" layoutX="243.0" layoutY="17.0" mnemonicParsing="false" onAction="#onMotiveButtonClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #5cd68d;" text="Motive" />
-            <Button fx:id="focusButton" layoutX="244.0" layoutY="17.0" minWidth="46.0" mnemonicParsing="false" onAction="#onFocusButtonClicked" prefHeight="25.0" style="-fx-background-color: #5cd68d;" text="Focus" />
-            <Button fx:id="rewardsButton" layoutX="244.0" layoutY="17.0" mnemonicParsing="false" onAction="#onRewardsButtonClicked" style="-fx-background-color: #5cd68d;" text="Rewards" />
-        </buttons>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </ButtonBar>
+      <HBox fx:id="hbox" alignment="CENTER" layoutX="1.0" layoutY="521.0" prefHeight="40.0" prefWidth="335.0" spacing="7.0">
+         <children>
+            <Label prefWidth="45.0" text="Sort by:" />
+            <RadioButton fx:id="dueDateRb" mnemonicParsing="false" onAction="#sortByDueDate" selected="true" text="Due Date">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="importanceRb" mnemonicParsing="false" onAction="#sortByImportance" text="Importance" toggleGroup="$group" />
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="25.0" text="Add Task">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="560.0" prefHeight="40.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #00A36C;">
+         <children>
+          <Button fx:id="taskListButton" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Task List">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button fx:id="taskListButton1" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Plan">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motive">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button fx:id="focusButton" mnemonicParsing="false" onAction="#onFocusButtonClicked" style="-fx-background-color: #5cd68d;" text="Focus">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <Button fx:id="rewardsButton" mnemonicParsing="false" onAction="#onRewardsButtonClicked" style="-fx-background-color: #5cd68d;" text="Rewards">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

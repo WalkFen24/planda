@@ -5,19 +5,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
-public class TaskListScreen {
+public class TaskListScreen implements Initializable {
 
+    @FXML
+    private final ToggleGroup group = new ToggleGroup();
     @FXML
     public Button focusButton;
     @FXML
@@ -30,13 +30,20 @@ public class TaskListScreen {
     //public Button deleteButton;
     @FXML
     public VBox vbox;
-    //@FXML
-    //public AnchorPane taskAnchor;
+    public RadioButton dueDateRb;
+    public RadioButton importanceRb;
 
     int numTasks = 1;
     int completeTasks = 0;
 
-    public TaskListScreen() {
+    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+
+
+    public TaskListScreen() throws IOException {
+        file.seek(0);
+        while(file.getFilePointer() != file.length()) {
+            System.out.println(file.readLine());
+        }
     }
 
     /*public void onDeleteButtonClicked(ActionEvent event) {
@@ -56,8 +63,6 @@ public class TaskListScreen {
         //adds another task pane to the Vbox
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
         numTasks++;
-        System.out.println(numTasks);
-        System.out.println(vbox.getChildren().get(0).getClass());
     }
 
     public void onTaskListButtonClicked(ActionEvent event) throws IOException {
@@ -80,4 +85,21 @@ public class TaskListScreen {
     public void onRewardsButtonClicked(ActionEvent event) {
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        numTasks++;
+    }
+
+    public void sortByDueDate(ActionEvent event) {
+
+    }
+
+    public void sortByImportance(ActionEvent event) {
+
+    }
 }
