@@ -16,7 +16,8 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+//TODO plan: make the button bar thing its own class so that I don't have to go through and edit each section over and over again
+    //TODO and cuz they share the same abilities so it's just way better (encapsulation, less bad redundancy, smoother updating/debugging/whatever)
     public static void main(String[] args) {
         launch();
     }
