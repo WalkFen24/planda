@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="focus screen and task list progress 2/28" />
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaFXApplication" />
         <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
         <option value="Class" />
       </list>
     </option>
@@ -47,8 +52,8 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/fdwal/OneDrive/Desktop/planda/src/main/java/com/ia/planda&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fdwal/OneDrive/Desktop/planda/src/main/resources/com/ia/planda&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/walkfen24/Desktop/planda/src/main/java/com/ia/planda&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/walkfen24/Desktop/planda/src/main/resources/com/ia/planda&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -57,7 +62,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources\com\ia\planda" />
       <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -114,33 +118,33 @@
       <option name="project" value="LOCAL" />
       <updated>1708982406124</updated>
     </task>
-    <task id="LOCAL-00004" summary="UI update - tasklist and focus screens">
-      <created>1709016516120</created>
+    <task id="LOCAL-00004" summary="UI update - focus and tasklist screens">
+      <created>1708984755711</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1709016516120</updated>
+      <updated>1708984755711</updated>
     </task>
-    <task id="LOCAL-00005" summary="UI update - panda pic test">
-      <created>1709017274603</created>
+    <task id="LOCAL-00005" summary="workspace fix">
+      <created>1709156407705</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1709017274603</updated>
+      <updated>1709156407705</updated>
     </task>
-    <task id="LOCAL-00006" summary="workspace fix again">
-      <created>1709174708558</created>
+    <task id="LOCAL-00006" summary="in class update">
+      <created>1709159993773</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1709174708558</updated>
+      <updated>1709159993773</updated>
     </task>
-    <task id="LOCAL-00007" summary="focus screen and task list progress 2/28">
-      <created>1709196952066</created>
+    <task id="LOCAL-00007" summary="workspace fix">
+      <created>1709231264642</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1709196952066</updated>
+      <updated>1709231264642</updated>
     </task>
     <option name="localTasksCounter" value="8" />
     <servers />
@@ -160,11 +164,10 @@
     <MESSAGE value="2nd commit - started UI" />
     <MESSAGE value="commit 2.5 - added main" />
     <MESSAGE value="workspace commit" />
-    <MESSAGE value="UI update - tasklist and focus screens" />
-    <MESSAGE value="UI update - panda pic test" />
-    <MESSAGE value="workspace fix again" />
-    <MESSAGE value="focus screen and task list progress 2/28" />
-    <option name="LAST_COMMIT_MESSAGE" value="focus screen and task list progress 2/28" />
+    <MESSAGE value="UI update - focus and tasklist screens" />
+    <MESSAGE value="in class update" />
+    <MESSAGE value="workspace fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
