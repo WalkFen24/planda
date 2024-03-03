@@ -43,27 +43,6 @@ public class FocusSetupScreen implements Initializable {
         stage.show();
     }
 
-    public void onTaskListButtonClicked(ActionEvent event) throws IOException {
-        Stage stage = (Stage) taskListButton.getScene().getWindow(); //gets the stage
-        Parent root = FXMLLoader.load(getClass().getResource("task-list-screen.fxml"));
-        stage.getScene().setRoot(root); //changes the root node
-        stage.show();
-    }
-
-    public void onMotiveButtonClicked(ActionEvent event) {
-    }
-
-    public void onFocusButtonClicked(ActionEvent event) throws IOException {
-        Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
-        Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
-        stage.getScene().setRoot(root); //changes the root node
-        stage.show();
-    }
-
-    public void onRewardsButtonClicked(ActionEvent event) {
-    }
-
-
     public void updateTimeLabel(MouseEvent mouseEvent) {
         timeLabel.setText((int)timeSlider.getValue() + " min");
     }
