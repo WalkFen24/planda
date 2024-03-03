@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -30,20 +31,26 @@ public class TaskListScreen implements Initializable {
     //public Button deleteButton;
     @FXML
     public VBox vbox;
+    @FXML
     public RadioButton dueDateRb;
+    @FXML
     public RadioButton importanceRb;
+    @FXML
+    public AnchorPane mainAnchorPane;
 
     int numTasks = 1;
     int completeTasks = 0;
 
     RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
 
-
     public TaskListScreen() throws IOException {
-        file.seek(0);
+        //TODO delete this - I was just trying the RAF stuff out
+        /*file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());
         }
+
+         */
     }
 
     /*public void onDeleteButtonClicked(ActionEvent event) {
@@ -89,6 +96,8 @@ public class TaskListScreen implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+            mainAnchorPane.getChildren().add(FXMLLoader.load(getClass().getResource("navigation-bar.fxml")));
+            mainAnchorPane.getChildren().getLast().setLayoutY(560.0);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

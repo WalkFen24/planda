@@ -28,7 +28,6 @@ public class TaskPane extends AnchorPane {
     public AnchorPane taskAnchor;
 
 
-
     public void onDeleteButtonClicked(ActionEvent event) {
         if (taskAnchor.getParent().getClass() == VBox.class) {
             VBox parent = (VBox) taskAnchor.getParent();
