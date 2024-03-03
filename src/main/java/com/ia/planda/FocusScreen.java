@@ -48,8 +48,9 @@ public class FocusScreen implements Initializable {
         timeLabel.setText(model.getInitFocusTime() + " min");
         progressBar.setProgress(1);
         try {
-            mainAnchorPane.getChildren().add(FXMLLoader.load(getClass().getResource("navigation-bar.fxml")));
-            mainAnchorPane.getChildren().getLast().setLayoutY(560.0);
+            AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
+            mainAnchorPane.getChildren().add(barAnchor);
+            barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -68,11 +68,14 @@ public class FocusSetupScreen implements Initializable {
         timeLabel.setText((int)timeSlider.getValue() + " min");
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            mainAnchorPane.getChildren().add(FXMLLoader.load(getClass().getResource("navigation-bar.fxml")));
-            mainAnchorPane.getChildren().getLast().setLayoutY(560.0);
+            //mainAnchorPane.getChildren().add(FXMLLoader.load(getClass().getResource("navigation-bar.fxml")));
+            AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
+            mainAnchorPane.getChildren().add(barAnchor);
+            barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
