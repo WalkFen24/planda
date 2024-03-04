@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -33,13 +30,13 @@ public class FocusSetupScreen implements Initializable {
     public Slider timeSlider;
     @FXML
     public AnchorPane mainAnchorPane;
-    Container container = new Container();
+    Cache cache = new Cache();
 
     public FocusSetupScreen() throws FileNotFoundException {
     }
 
     public void onStartButtonClicked(ActionEvent event) throws IOException {
-        container.setInitFocusTime((int)timeSlider.getValue());
+        cache.setInitFocusTime((int)timeSlider.getValue());
 
         Stage stage = (Stage) startButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("focus-screen.fxml"));

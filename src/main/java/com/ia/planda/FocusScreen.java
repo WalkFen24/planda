@@ -4,12 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -31,7 +29,7 @@ public class FocusScreen implements Initializable {
     public Label timeLabel;
     @FXML
     public AnchorPane mainAnchorPane;
-    Container container = new Container();
+    Cache cache = new Cache();
 
     public FocusScreen() throws FileNotFoundException {
     }
@@ -46,7 +44,7 @@ public class FocusScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        timeLabel.setText(container.getInitFocusTime() + " min");
+        timeLabel.setText(cache.getInitFocusTime() + " min");
         progressBar.setProgress(1);
         try {
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
