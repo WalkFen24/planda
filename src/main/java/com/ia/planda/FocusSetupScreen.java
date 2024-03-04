@@ -32,10 +32,10 @@ public class FocusSetupScreen implements Initializable {
     public Slider timeSlider;
     @FXML
     public AnchorPane mainAnchorPane;
-    Model model = new Model();
+    Container container = new Container();
 
     public void onStartButtonClicked(ActionEvent event) throws IOException {
-        model.setInitFocusTime((int)timeSlider.getValue());
+        container.setInitFocusTime((int)timeSlider.getValue());
 
         Stage stage = (Stage) startButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("focus-screen.fxml"));

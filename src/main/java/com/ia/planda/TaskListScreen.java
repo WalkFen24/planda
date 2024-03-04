@@ -1,9 +1,11 @@
 package com.ia.planda;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -38,32 +40,23 @@ public class TaskListScreen implements Initializable {
     @FXML
     public AnchorPane mainAnchorPane;
 
+    private static boolean isFirstRun = true;
     int numTasks = 1;
     int completeTasks = 0;
+    Container container = new Container();
 
     RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
 
     public TaskListScreen() throws IOException {
         //TODO delete this - I was just trying the RAF stuff out
-        /*file.seek(0);
+        /*
+        RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+        file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());
         }
 
          */
-    }
-
-    /*public void onDeleteButtonClicked(ActionEvent event) {
-        //vbox.getChildren().remove();
-        numTasks--;
-        System.out.println(numTasks);
-    }
-
-     */
-
-    public void onCompleteButtonClicked(ActionEvent event) {
-        numTasks--;
-        completeTasks++;
     }
 
     public void onAddButtonClicked(ActionEvent event) throws IOException {
@@ -72,33 +65,16 @@ public class TaskListScreen implements Initializable {
         numTasks++;
     }
 
-    public void onTaskListButtonClicked(ActionEvent event) throws IOException {
-        Stage stage = (Stage) taskListButton.getScene().getWindow(); //gets the stage
-        Parent root = FXMLLoader.load(getClass().getResource("task-list-screen.fxml"));
-        stage.getScene().setRoot(root); //changes the root node
-        stage.show();
-    }
-
-    public void onMotiveButtonClicked(ActionEvent event) {
-    }
-
-    public void onFocusButtonClicked(ActionEvent event) throws IOException {
-        Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
-        Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
-        stage.getScene().setRoot(root); //changes the root node
-        stage.show();
-    }
-
-    public void onRewardsButtonClicked(ActionEvent event) {
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-            AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
-            mainAnchorPane.getChildren().add(barAnchor);
-            barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
+            if (isFirstRun) { //TODO prob remove this later once the persistent storage is set up
+                vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+                container.setTasksList(vbox.getChildren());
+                isFirstRun = false;
+            } else {
+                vbox.getChildren().setAll(container.getTasksList());
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -110,6 +86,45 @@ public class TaskListScreen implements Initializable {
     }
 
     public void sortByImportance(ActionEvent event) {
+
+    }
+
+
+    //this screen has its own buttonbar already in the FXML file, along with its own methods for them,
+    //as this class needs to update the container with the new information before the screen is left
+    //in order to keep the vbox info in the short term.
+    public void onTaskListButtonClicked(ActionEvent event) throws IOException {
+    }
+
+    public void onMotiveButtonClicked(ActionEvent event) {
+        //TODO remember to update with the NavigationBar class!
+
+        container.setTasksList(vbox.getChildren());
+    }
+
+    public void onFocusButtonClicked(ActionEvent event) throws IOException {
+        //TODO remember to update with the NavigationBar class!
+
+        container.setTasksList(vbox.getChildren());
+
+        Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
+
+    }
+
+    public void onRewardsButtonClicked(ActionEvent event) {
+        //TODO remember to update with the NavigationBar class!
+        container.setTasksList(vbox.getChildren());
+    }
+
+    public void onPlanButtonClicked(ActionEvent actionEvent) {
+        //TODO remember to update with the NavigationBar class!
+        container.setTasksList(vbox.getChildren());
+    }
+
+    public void setUpVbox() {
 
     }
 }

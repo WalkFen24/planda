@@ -11,62 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
    <children>
       <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="11.0" layoutY="13.0" prefHeight="507.0" prefWidth="312.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
                   <VBox fx:id="vbox" prefHeight="517.0" prefWidth="303.0" spacing="7.0">
-                     <!--
-                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                            <TitledPane fx:id="taskPane" wrapText="true">
-                              <content>
-                                <AnchorPane minWidth="0.0" prefWidth="300.0">
-                                       <children>
-                                          <VBox prefWidth="297.0" spacing="3.0">
-                                             <children>
-                                                <FlowPane hgap="3.0" vgap="3.0">
-                                                   <children>
-                                                      <TextField fx:id="taskNameText" prefHeight="25.0" prefWidth="179.0" promptText="Task name" />
-                                                      <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="106.0" promptText="Due date" />
-                                                      <Label text="Estimated time requirement: " />
-                                                      <TextField prefHeight="25.0" prefWidth="131.0" promptText="time in minutes" />
-                                                      <Label text="Goal time per day: " />
-                                                      <TextField prefHeight="25.0" prefWidth="184.0" promptText="time in minutes" />
-                                                   </children>
-                                                </FlowPane>
-                                                <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="277.0" promptText="Task details" wrapText="true" />
-                                                <ButtonBar fx:id="taskButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
-                                                   <buttons>
-                                                      <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
-                                                      <Button fx:id="Complete" mnemonicParsing="false" onAction="#onCompleteButtonClicked" text="Complete" />
-                                                   </buttons>
-                                                   <opaqueInsets>
-                                                      <Insets />
-                                                   </opaqueInsets>
-                                                   <padding>
-                                                      <Insets left="5.0" right="5.0" />
-                                                   </padding>
-                                                </ButtonBar>
-                                             </children>
-                                             <padding>
-                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-                                             </padding>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets top="1.0" />
-                                       </padding>
-                                    </AnchorPane>
-                              </content>
-                            </TitledPane>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                     -->
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -90,30 +41,38 @@
             </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" disable="true" layoutY="560.0" prefHeight="40.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #00A36C;" visible="false">
+      <AnchorPane layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="335.0">
          <children>
-          <Button fx:id="taskListButton" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Task List">
-               <font>
-                  <Font size="13.0" />
-               </font></Button>
-            <Button fx:id="taskListButton1" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Plan">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motive">
-               <font>
-                  <Font size="13.0" />
-               </font></Button>
-            <Button fx:id="focusButton" mnemonicParsing="false" onAction="#onFocusButtonClicked" style="-fx-background-color: #5cd68d;" text="Focus">
-               <font>
-                  <Font size="13.0" />
-               </font></Button>
-            <Button fx:id="rewardsButton" mnemonicParsing="false" onAction="#onRewardsButtonClicked" style="-fx-background-color: #5cd68d;" text="Rewards">
-               <font>
-                  <Font size="13.0" />
-               </font></Button>
+            <HBox fx:id="navigationBar" alignment="CENTER" prefHeight="40.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #00A36C;">
+               <children>
+                  <Button fx:id="taskListButton" mnemonicParsing="false" onAction="#onTaskListButtonClicked" style="-fx-background-color: #5cd68d;" text="Task List">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="planButton" mnemonicParsing="false" onAction="#onPlanButtonClicked" style="-fx-background-color: #5cd68d;" text="Plan">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motive">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="focusButton" mnemonicParsing="false" onAction="#onFocusButtonClicked" style="-fx-background-color: #5cd68d;" text="Focus">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="rewardsButton" mnemonicParsing="false" onAction="#onRewardsButtonClicked" style="-fx-background-color: #5cd68d;" text="Rewards">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </AnchorPane>

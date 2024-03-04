@@ -30,7 +30,7 @@ public class FocusScreen implements Initializable {
     public Label timeLabel;
     @FXML
     public AnchorPane mainAnchorPane;
-    Model model = new Model();
+    Container container = new Container();
 
 
     public void onEndButtonClicked(ActionEvent event) {
@@ -42,7 +42,7 @@ public class FocusScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        timeLabel.setText(model.getInitFocusTime() + " min");
+        timeLabel.setText(container.getInitFocusTime() + " min");
         progressBar.setProgress(1);
         try {
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
