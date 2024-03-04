@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +35,9 @@ public class FocusSetupScreen implements Initializable {
     public AnchorPane mainAnchorPane;
     Container container = new Container();
 
+    public FocusSetupScreen() throws FileNotFoundException {
+    }
+
     public void onStartButtonClicked(ActionEvent event) throws IOException {
         container.setInitFocusTime((int)timeSlider.getValue());
 
@@ -51,7 +55,6 @@ public class FocusSetupScreen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            //mainAnchorPane.getChildren().add(FXMLLoader.load(getClass().getResource("navigation-bar.fxml")));
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
             mainAnchorPane.getChildren().add(barAnchor);
             barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height

@@ -72,7 +72,7 @@ public class TaskListScreen implements Initializable {
                 vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
                 container.setTasksList(vbox.getChildren());
                 isFirstRun = false;
-            } else {
+            } else { //TODO and just keep this
                 vbox.getChildren().setAll(container.getTasksList());
             }
         } catch (IOException e) {

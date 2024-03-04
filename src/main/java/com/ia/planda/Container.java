@@ -3,6 +3,10 @@ package com.ia.planda;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.Collection;
 
 public class Container {
@@ -10,7 +14,9 @@ public class Container {
     private static int initFocusTime;
     private static Collection<? extends Node> tasksList;
 
-    public Container() {
+    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+
+    public Container() throws FileNotFoundException {
     }
 
     public int getInitFocusTime() {
@@ -21,18 +27,26 @@ public class Container {
         Container.initFocusTime = initFocusTime;
     }
 
-    public boolean setTasksList(Collection<? extends Node> tasksList) {
-        try {
-            Container.tasksList = tasksList;
-            System.out.println("successful");
-            return true;
-        } catch(Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public void setTasksList(Collection<? extends Node> tasksList) {
+        Container.tasksList = tasksList;
     }
     public Collection<? extends Node> getTasksList() {
         return Container.tasksList;
     }
 
+    public void setUpContainer() throws IOException {
+        //TODO read info from the file to the container/cache
+        if (file.getFilePointer() == file.length()) {
+            System.out.println("Done parsing file");
+        } else {
+            System.out.println(file.readLine()); //TODO replace with code to read the lines into the proper storage locations
+            //TODO so it assigns the first line as the name field of the first TaskPane stored in the vbox's collection
+
+            setUpContainer();
+        }
+    }
+
+    public void updateFile(Container container) {
+        //TODO save important Container info to the text file for persistent storage before closing the app
+    }
 }

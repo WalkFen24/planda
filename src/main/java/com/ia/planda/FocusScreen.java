@@ -11,6 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,6 +32,9 @@ public class FocusScreen implements Initializable {
     @FXML
     public AnchorPane mainAnchorPane;
     Container container = new Container();
+
+    public FocusScreen() throws FileNotFoundException {
+    }
 
 
     public void onEndButtonClicked(ActionEvent event) {

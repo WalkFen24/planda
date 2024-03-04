@@ -12,7 +12,7 @@ import java.io.RandomAccessFile;
 
 public class Main extends Application {
 
-    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+    //RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
     Container container;
 
     public Main() throws FileNotFoundException {
@@ -26,25 +26,21 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         container = new Container();
-        try {
-            setUpContainer(container);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        container.setUpContainer(); //sets up the container/cache class
+
         stage.setOnCloseRequest(event -> {
             //save important Container info to the text file for persistent storage before closing the app
-
-
+            container.updateFile(container);
             System.out.println("Program exited.");
         });
     }
-//TODO plan: make the button bar thing its own class so that I don't have to go through and edit each section over and over again
-    //TODO and cuz they share the same abilities so it's just way better (encapsulation, less bad redundancy, smoother updating/debugging/whatever)
+
     public static void main(String[] args) {
         launch();
     }
-
+    /*
     public void setUpContainer(Container container) throws IOException {
+        //TODO read info from the file to the container/cache
         if (file.getFilePointer() == file.length()) {
             System.out.println("Done parsing file");
         } else {
@@ -55,9 +51,11 @@ public class Main extends Application {
     }
 
     public void updateFile(Container container) {
-
+        //TODO save important Container info to the text file for persistent storage before closing the app
     }
 
+
+     */
 
 
 
