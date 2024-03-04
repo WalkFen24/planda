@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="navigation bar custom class" />
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="updates to the button bar functionality, short term saving of tasks, persistent storage code updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +66,11 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda" />
+      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\java\com\ia\planda" />
+      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.ia.planda" />
@@ -141,28 +154,49 @@
       <option name="project" value="LOCAL" />
       <updated>1709231264642</updated>
     </task>
-    <task id="LOCAL-00008" summary="updated delete button functionality">
-      <created>1709243955679</created>
+    <task id="LOCAL-00008" summary="RAF I/O, task list, and focus updates">
+      <created>1709282746580</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1709243955679</updated>
+      <updated>1709282746580</updated>
     </task>
-    <task id="LOCAL-00009" summary="workspace fix">
-      <created>1709328382365</created>
+    <task id="LOCAL-00009" summary="button bar UI update">
+      <created>1709283362753</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1709328382365</updated>
+      <updated>1709283362753</updated>
     </task>
-    <task id="LOCAL-00010" summary="navigation bar custom class">
-      <created>1709330431840</created>
+    <task id="LOCAL-00010" summary="workspace fix">
+      <created>1709447160497</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1709330431840</updated>
+      <updated>1709447160497</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="debugged the button bar custom class">
+      <created>1709448717780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709448717780</updated>
+    </task>
+    <task id="LOCAL-00012" summary="debugged the button bar custom class">
+      <created>1709449401704</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709449401704</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updates to the button bar functionality, short term saving of tasks, persistent storage code updated">
+      <created>1709527986523</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709527986523</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,10 +216,12 @@
     <MESSAGE value="workspace commit" />
     <MESSAGE value="UI update - focus and tasklist screens" />
     <MESSAGE value="in class update" />
-    <MESSAGE value="updated delete button functionality" />
+    <MESSAGE value="RAF I/O, task list, and focus updates" />
+    <MESSAGE value="button bar UI update" />
     <MESSAGE value="workspace fix" />
-    <MESSAGE value="navigation bar custom class" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigation bar custom class" />
+    <MESSAGE value="debugged the button bar custom class" />
+    <MESSAGE value="updates to the button bar functionality, short term saving of tasks, persistent storage code updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates to the button bar functionality, short term saving of tasks, persistent storage code updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

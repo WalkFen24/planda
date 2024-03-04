@@ -37,14 +37,14 @@ public class NavigationBar extends AnchorPane {
         stage.show();
     }
 
-    public void onMotiveButtonClicked(ActionEvent event) {
-    }
-
     public void onFocusButtonClicked(ActionEvent event) throws IOException {
         Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
         stage.getScene().setRoot(root); //changes the root node
         stage.show();
+    }
+
+    public void onMotiveButtonClicked(ActionEvent event) {
     }
 
     public void onRewardsButtonClicked(ActionEvent event) {
