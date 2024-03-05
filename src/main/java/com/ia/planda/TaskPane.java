@@ -33,7 +33,8 @@ public class TaskPane extends AnchorPane {
     @FXML
     public VBox taskVbox;
 
-    public static LinkedList<VBox> tpVboxList;
+    private TaskPane next;
+    private TaskPane prev;
 
     public TaskPane() {
     }
@@ -114,5 +115,21 @@ public class TaskPane extends AnchorPane {
 
     public void setTaskVbox(VBox taskVbox) {
         this.taskVbox = taskVbox;
+    }
+
+    public TaskPane next() {
+        return next;
+    }
+
+    public void setNext(TaskPane next) {
+        this.next = next;
+    }
+
+    public TaskPane prev() {
+        return prev;
+    }
+
+    public void setPrev(TaskPane prev) {
+        this.prev = prev;
     }
 }

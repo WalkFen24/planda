@@ -4,15 +4,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -60,11 +63,30 @@ public class TaskListScreen implements Initializable {
 
     public void onAddButtonClicked(ActionEvent event) throws IOException {
         //adds another task pane to the Vbox
-        vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        TaskPane.tpVboxList.add(this.vbox);
-        System.out.println(Arrays.toString(TaskPane.tpVboxList.toArray()));
 
-        cache.updateFile();
+        //FUNCTIONAL but pretty bad, unless I make it its own method, but I wanted TaskPane to have all the
+        //getters and setters for the different fields so I could avoid this...
+        //TODO maybe a method that will return an ArrayList or LinkedList of TaskPanes, given the vbox?
+        //TODO and it basically does the below stuff over and over again I guess? Or I can make a separate
+        //TODO method to get that first arr (from the flowpane children) and then that way I can skip all those extra steps
+        //TODO so like a custom method using abstraction from ANOTHER method?
+
+        vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+
+        AnchorPane ap = (AnchorPane) vbox.getChildren().get(0);
+        TitledPane tp = (TitledPane) ap.getChildren().get(0);
+        AnchorPane ap2 = (AnchorPane) tp.getContent();
+        VBox vbox = (VBox) ap2.getChildren().get(0);
+        FlowPane fp = (FlowPane) vbox.getChildren().get(0);
+        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
+        TextField tf = (TextField) arr.get(0);
+        System.out.println(tf.getText());
+
+
+        //vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        //TaskPane tp = FXMLLoader.load(getClass().getResource("TaskPane.fxml"));
+
+        //cache.updateFile();
         numTasks++;
     }
 
@@ -129,7 +151,13 @@ public class TaskListScreen implements Initializable {
         cache.setTasksList(vbox.getChildren());
     }
 
-    public void setUpVbox() {
-
+    public static ArrayList<Node> taskPaneArrayList(VBox vbox) {
+        AnchorPane ap = (AnchorPane) vbox.getChildren().get(0);
+        TitledPane tp = (TitledPane) ap.getChildren().get(0);
+        AnchorPane ap2 = (AnchorPane) tp.getContent();
+        VBox vbox2 = (VBox) ap2.getChildren().get(0);
+        FlowPane fp = (FlowPane) vbox.getChildren().get(0);
+        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
+        return arr;
     }
 }

@@ -3,6 +3,7 @@ package com.ia.planda;
 import javafx.scene.Node;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -10,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Cache {
@@ -18,7 +20,7 @@ public class Cache {
     private static List<? extends Node> tasksList;
     private static VBox vbox;
 
-    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+    private final RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
 
     public Cache() throws FileNotFoundException {
     }
@@ -65,6 +67,12 @@ public class Cache {
     public static void updateFile(int n) throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
 
+
+
+
+
+        //FAILED ATTEMPTS
+
         //System.out.println(tasksList.getClass());
         //System.out.println(tasksList.get(0).getClass());
         //AnchorPane ap = (AnchorPane)tasksList.get(0);
@@ -75,10 +83,6 @@ public class Cache {
         //System.out.println(tp);
 
 
-
-
-
-        System.out.println();
         //AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
         //TitledPane tp = (TitledPane)pane.getChildren().get(0);
         //System.out.println(tp.getChildrenUnmodifiable().get(0));
