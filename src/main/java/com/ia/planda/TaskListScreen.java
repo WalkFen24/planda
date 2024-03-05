@@ -59,6 +59,10 @@ public class TaskListScreen implements Initializable {
     public void onAddButtonClicked(ActionEvent event) throws IOException {
         //adds another task pane to the Vbox
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        System.out.println(vbox.getChildren().get(0));
+        AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
+        System.out.println(pane.getChildren().get(0));
+        cache.updateFile();
         numTasks++;
     }
 
@@ -68,6 +72,8 @@ public class TaskListScreen implements Initializable {
             if (isFirstRun) { //TODO prob remove this later once the persistent storage is set up
                 vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
                 cache.setTasksList(vbox.getChildren());
+                cache.setVbox(vbox);
+                //System.out.println(vbox.getChildren().get(0).);
                 isFirstRun = false;
             } else { //TODO and just keep this
                 vbox.getChildren().setAll(cache.getTasksList());

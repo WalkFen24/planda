@@ -26,6 +26,7 @@ public class Main extends Application {
         cache = new Cache();
         cache.setUpContainer(); //sets up the cache/cache class
 
+        /*
         stage.setOnCloseRequest(event -> {
             //save important Cache info to the text file for persistent storage before closing the app
             try {
@@ -35,6 +36,8 @@ public class Main extends Application {
             }
             System.out.println("Program exited.");
         });
+
+         */
     }
 
     public static void main(String[] args) {

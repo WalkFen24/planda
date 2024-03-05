@@ -1,6 +1,8 @@
 package com.ia.planda;
 
 import javafx.scene.Node;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -14,10 +16,18 @@ public class Cache {
     //holds data to be used and transferred between classes, for short-term storage
     private static int initFocusTime;
     private static List<? extends Node> tasksList;
+    private static VBox vbox;
 
     RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
 
     public Cache() throws FileNotFoundException {
+    }
+
+    public void setVbox(VBox vbox) {
+        Cache.vbox = vbox;
+    }
+    public VBox getVbox() {
+        return vbox;
     }
 
     public int getInitFocusTime() {
@@ -34,7 +44,6 @@ public class Cache {
     public List<? extends Node> getTasksList() {
         return Cache.tasksList;
     }
-    public static VBox vbox = new VBox();
 
     public void setUpContainer() throws IOException {
         //read info from the file to the cache
@@ -50,21 +59,31 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
+        //vbox.getChildren().setAll(tasksList);
         updateFile(0);
-        vbox.getChildren().setAll(tasksList);
     }
 
     public static void updateFile(int n) throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
 
+        System.out.println();
+        //AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
+        //TitledPane tp = (TitledPane)pane.getChildren().get(0);
+        //System.out.println(tp.getChildrenUnmodifiable().get(0));
+
+        /*
         if (n == tasksList.size()) { //once all tasks covered
             System.out.println("File updated.");
             System.out.println("Tasks: " + tasksList.size());
             //file.seek(0);
         } else {
-            System.out.println(vbox.getChildren().getClass());
+            AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
+            //TitledPane tp = (TitledPane)pane.getChildren().get(0);
+            //System.out.println(tp.getChildrenUnmodifiable().get(0));
             updateFile(n+1);
         }
+
+         */
 
 
         //file.writeUTF(String.valueOf(tasksList.get(0)));
