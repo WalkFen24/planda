@@ -59,12 +59,24 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
-        //vbox.getChildren().setAll(tasksList);
         updateFile(0);
     }
 
     public static void updateFile(int n) throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
+
+        //System.out.println(tasksList.getClass());
+        //System.out.println(tasksList.get(0).getClass());
+        //AnchorPane ap = (AnchorPane)tasksList.get(0);
+        //System.out.println(ap);
+        //System.out.println(ap.getChildren().get(0).getClass());
+        //TitledPane tp = (TitledPane)ap.getChildren().get(0);
+        //System.out.println(tp);
+        //System.out.println(tp);
+
+
+
+
 
         System.out.println();
         //AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);

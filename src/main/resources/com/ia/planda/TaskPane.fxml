@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ia.planda.TaskPane">
+<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
    <children>
       <TitledPane fx:id="taskPane" wrapText="true">
          <content>
-            <AnchorPane minWidth="0.0" prefWidth="300.0">
+            <AnchorPane fx:id="titledAnchor" minWidth="0.0" prefWidth="300.0">
                <children>
-                  <VBox prefWidth="297.0" spacing="3.0">
+                  <VBox fx:id="taskVbox" prefWidth="297.0" spacing="3.0">
                      <children>
                         <FlowPane hgap="3.0" vgap="3.0">
                            <children>

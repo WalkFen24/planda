@@ -7,11 +7,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class TaskListScreen implements Initializable {
@@ -59,9 +61,9 @@ public class TaskListScreen implements Initializable {
     public void onAddButtonClicked(ActionEvent event) throws IOException {
         //adds another task pane to the Vbox
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        System.out.println(vbox.getChildren().get(0));
-        AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
-        System.out.println(pane.getChildren().get(0));
+        TaskPane.tpVboxList.add(this.vbox);
+        System.out.println(Arrays.toString(TaskPane.tpVboxList.toArray()));
+
         cache.updateFile();
         numTasks++;
     }
