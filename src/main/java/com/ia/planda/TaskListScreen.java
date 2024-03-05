@@ -72,19 +72,10 @@ public class TaskListScreen implements Initializable {
         //TODO so like a custom method using abstraction from ANOTHER method?
 
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        ArrayList<Node> arr = cache.taskElementsArr(vbox, 0,0);
 
-        AnchorPane ap = (AnchorPane) vbox.getChildren().get(0);
-        TitledPane tp = (TitledPane) ap.getChildren().get(0);
-        AnchorPane ap2 = (AnchorPane) tp.getContent();
-        VBox vbox = (VBox) ap2.getChildren().get(0);
-        FlowPane fp = (FlowPane) vbox.getChildren().get(0);
-        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
-        TextField tf = (TextField) arr.get(0);
-        System.out.println(tf.getText());
+        System.out.println(arr.get(0));
 
-
-        //vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        //TaskPane tp = FXMLLoader.load(getClass().getResource("TaskPane.fxml"));
 
         //cache.updateFile();
         numTasks++;
@@ -151,13 +142,16 @@ public class TaskListScreen implements Initializable {
         cache.setTasksList(vbox.getChildren());
     }
 
-    public static ArrayList<Node> taskPaneArrayList(VBox vbox) {
-        AnchorPane ap = (AnchorPane) vbox.getChildren().get(0);
+    /*
+    public static ArrayList<Node> taskPaneArr(VBox taskList) {
+        AnchorPane ap = (AnchorPane) taskList.getChildren().get(0);
         TitledPane tp = (TitledPane) ap.getChildren().get(0);
         AnchorPane ap2 = (AnchorPane) tp.getContent();
-        VBox vbox2 = (VBox) ap2.getChildren().get(0);
+        VBox vbox = (VBox) ap2.getChildren().get(0);
         FlowPane fp = (FlowPane) vbox.getChildren().get(0);
         ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
         return arr;
     }
+
+     */
 }

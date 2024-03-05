@@ -1,8 +1,10 @@
 package com.ia.planda;
 
+import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -10,6 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -113,4 +116,29 @@ public class Cache {
 
          */
     }
+
+    public ArrayList<Node> taskElementsArr(VBox taskList, int task, int n) {
+        AnchorPane ap = (AnchorPane) taskList.getChildren().get(task);
+        TitledPane tp = (TitledPane) ap.getChildren().get(0);
+        AnchorPane ap2 = (AnchorPane) tp.getContent();
+        VBox vbox = (VBox) ap2.getChildren().get(0);
+        FlowPane fp = (FlowPane) vbox.getChildren().get(n);
+        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
+        return arr;
+    }
+
+
+    /*TextField taskNameText;
+     DatePicker datePicker;
+     TextArea taskDetailsText;
+     ButtonBar taskButtonBar;
+     Button deleteButton;
+     Button Complete;
+     TitledPane taskPane;
+     AnchorPane taskAnchor;
+     AnchorPane titledAnchor;
+     VBox taskVbox;
+     */
+
+
 }
