@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
+<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
    <children>
       <TitledPane fx:id="taskPane" wrapText="true">
          <content>
@@ -24,13 +24,15 @@
                            <children>
                               <TextField fx:id="taskNameText" prefHeight="25.0" prefWidth="179.0" promptText="Task name" />
                               <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="106.0" promptText="Due date" />
-                              <Label text="Estimated time requirement: " />
-                              <TextField prefHeight="25.0" prefWidth="131.0" promptText="time in minutes" />
-                              <Label text="Goal time per day: " />
-                              <TextField prefHeight="25.0" prefWidth="184.0" promptText="time in minutes" />
+                              <Label fx:id="timeReqLabel" text="Estimated time requirement: " />
+                              <TextField fx:id="timeReqText" prefHeight="25.0" prefWidth="131.0" promptText="time in minutes" />
+                              <Label fx:id="goalTimeLabel" text="Goal time per day: " />
+                              <TextField fx:id="goalTimeText" prefHeight="25.0" prefWidth="184.0" promptText="time in minutes" />
+                              <Label fx:id="importanceLabel" text="Importance:" />
+                              <TextField fx:id="importanceText" prefHeight="25.0" prefWidth="221.0" promptText="number between 1–10" />
+                              <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="287.0" promptText="Task details" wrapText="true" />
                            </children>
                         </FlowPane>
-                        <TextArea fx:id="taskDetailsText" prefHeight="130.0" prefWidth="277.0" promptText="Task details" wrapText="true" />
                         <ButtonBar fx:id="taskButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
                            <buttons>
                               <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClicked" text="Delete" />

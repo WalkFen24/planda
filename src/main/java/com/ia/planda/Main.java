@@ -2,16 +2,26 @@ package com.ia.planda;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class Main extends Application {
 
-    //RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
-    Cache cache;
+    private static RandomAccessFile file;
+
+    static {
+        try {
+            file = new RandomAccessFile(new File("tasks.txt"), "r");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static Cache cache;
 
     public Main() throws FileNotFoundException {
     }
@@ -24,23 +34,26 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         cache = new Cache();
-        cache.setUpContainer(); //sets up the cache/cache class
-
-        /*
         stage.setOnCloseRequest(event -> {
             //save important Cache info to the text file for persistent storage before closing the app
             try {
                 cache.updateFile();
+                cache.setUpCache();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
             System.out.println("Program exited.");
         });
 
-         */
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        System.out.println("-!-Text File Content Init-!-");
+        file.seek(0);
+        while(file.getFilePointer() != file.length()) {
+            System.out.println(file.readLine());
+        }
+
         launch();
     }
     /*
@@ -72,4 +85,5 @@ public class Main extends Application {
         }
 
          */
+
 }

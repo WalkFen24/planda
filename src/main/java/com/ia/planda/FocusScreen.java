@@ -31,7 +31,7 @@ public class FocusScreen implements Initializable {
     public AnchorPane mainAnchorPane;
     Cache cache = new Cache();
 
-    public FocusScreen() throws FileNotFoundException {
+    public FocusScreen() throws IOException {
     }
 
 

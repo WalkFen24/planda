@@ -48,7 +48,15 @@ public class TaskListScreen implements Initializable {
     int completeTasks = 0;
     Cache cache = new Cache();
 
-    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+    private static RandomAccessFile file;
+
+    static {
+        try {
+            file = new RandomAccessFile(new File("tasks.txt"), "r");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public TaskListScreen() throws IOException {
         //TODO delete this - I was just trying the RAF stuff out
@@ -73,34 +81,33 @@ public class TaskListScreen implements Initializable {
         //TODO so like a custom method using abstraction from ANOTHER method?
 
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        taskList.setTaskList(vbox);
+        taskList.setTaskList();
         taskList.printTaskNames();
 
-        //ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
-
-        /*
-        for (int i = 0; i < numTasks; i++) {
-            ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
-            System.out.println("Task " + i + ": " + ((TextField)arr.get(0)).getText());
-        }
-
-         */
-        //ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
-        //System.out.println(arr.get(0));
-
-
-        //cache.updateFile();
+        cache.updateFile();
         numTasks++;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            if (isFirstRun) { //TODO prob remove this later once the persistent storage is set up
+            if (isFirstRun) {
                 vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
                 cache.setTasksList(vbox.getChildren());
                 cache.setVbox(vbox);
                 taskList = new TaskList(vbox);
+                file.seek(0);
+                System.out.println(file.readLine());
+                //taskList.setTaskNameText(0, );
+
+                System.out.println("*****");
+                file.seek(0);
+                while(file.getFilePointer() != file.length()) {
+                    System.out.println(file.readLine());
+                }
+
+                taskList.setDate(0, "2024-3-15");
+                //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
             } else { //TODO and just keep this
                 vbox.getChildren().setAll(cache.getTasksList());
@@ -166,4 +173,18 @@ public class TaskListScreen implements Initializable {
     }
 
      */
+
+
+    public void initTaskList() throws IOException {
+        //file.seek(0);
+        taskList.setTaskNameText(0, "Testing");
+
+        /*
+        //set up each row
+        while(file.length() - file.getFilePointer() > 7) {
+
+        }
+
+         */
+    }
 }

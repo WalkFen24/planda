@@ -52,6 +52,7 @@ public class TaskPane extends AnchorPane {
         }
     }
 
+    /*
     public TextField getTaskNameText() {
         return taskNameText;
     }
@@ -75,6 +76,7 @@ public class TaskPane extends AnchorPane {
     public void setTaskDetailsText(String text) {
         this.taskDetailsText.setText(text);
     }
+    */
 
     public ButtonBar getTaskButtonBar() {
         return taskButtonBar;
