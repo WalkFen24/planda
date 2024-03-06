@@ -56,6 +56,7 @@ public class Cache {
             System.out.println(file.readLine());
         }
 
+
         /*
         if (file.getFilePointer() == file.length()) {
             System.out.println("Done parsing file");
@@ -71,6 +72,7 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
+
         //write to file
         for (int i = 0; i < tasksList.size(); i++) {
             writeLn("Name: " + taskList.getTaskNameText(i));
@@ -145,6 +147,15 @@ public class Cache {
 
     public void writeLn(String str) throws IOException {
         fw.write(str + "\n");
+    }
+
+    public void updateTaskList() throws IOException {
+        if (vbox == null) {
+            System.out.println("vbox in cache is null.");
+        } else {
+            //file.seek(0);
+            //System.out.println("done reading file in cache");
+        }
     }
 
 }

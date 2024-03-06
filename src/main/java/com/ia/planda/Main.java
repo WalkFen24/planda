@@ -38,7 +38,12 @@ public class Main extends Application {
             //save important Cache info to the text file for persistent storage before closing the app
             try {
                 cache.updateFile();
-                cache.setUpCache();
+                //cache.setUpCache();
+                System.out.println("~~~Text File Content On Close~~~");
+                file.seek(0);
+                while(file.getFilePointer() != file.length()) {
+                    System.out.println(file.readLine());
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -48,7 +53,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println("-!-Text File Content Init-!-");
+        System.out.println("~~~Text File Content Initially~~~");
         file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());

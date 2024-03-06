@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="adding cache functionality" />
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709675299808</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="workspace fix">
+      <created>1709761229871</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1709761229871</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,10 +262,25 @@
     <MESSAGE value="debugged the button bar custom class" />
     <MESSAGE value="updates to the button bar functionality, short term saving of tasks, persistent storage code updated" />
     <MESSAGE value="debugging the file functionality" />
-    <MESSAGE value="workspace fix" />
     <MESSAGE value="debugging" />
     <MESSAGE value="adding cache functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding cache functionality" />
+    <MESSAGE value="workspace fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

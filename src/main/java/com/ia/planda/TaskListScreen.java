@@ -48,18 +48,11 @@ public class TaskListScreen implements Initializable {
     int completeTasks = 0;
     Cache cache = new Cache();
 
-    private static RandomAccessFile file;
-
-    static {
-        try {
-            file = new RandomAccessFile(new File("tasks.txt"), "r");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
 
     public TaskListScreen() throws IOException {
         //TODO delete this - I was just trying the RAF stuff out
+
         /*
         RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
         file.seek(0);
@@ -96,17 +89,12 @@ public class TaskListScreen implements Initializable {
                 cache.setTasksList(vbox.getChildren());
                 cache.setVbox(vbox);
                 taskList = new TaskList(vbox);
-                file.seek(0);
-                System.out.println(file.readLine());
-                //taskList.setTaskNameText(0, );
 
-                System.out.println("*****");
-                file.seek(0);
-                while(file.getFilePointer() != file.length()) {
-                    System.out.println(file.readLine());
-                }
-
+                taskList.setTaskNameText(0, "String");
                 taskList.setDate(0, "2024-3-15");
+
+                cache.updateTaskList();
+
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
             } else { //TODO and just keep this
