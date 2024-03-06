@@ -117,12 +117,12 @@ public class Cache {
          */
     }
 
-    public ArrayList<Node> taskElementsArr(VBox taskList, int task, int n) {
+    public ArrayList<Node> taskElementsArr(VBox taskList, int task) {
         AnchorPane ap = (AnchorPane) taskList.getChildren().get(task);
         TitledPane tp = (TitledPane) ap.getChildren().get(0);
         AnchorPane ap2 = (AnchorPane) tp.getContent();
         VBox vbox = (VBox) ap2.getChildren().get(0);
-        FlowPane fp = (FlowPane) vbox.getChildren().get(n);
+        FlowPane fp = (FlowPane) vbox.getChildren().get(0);
         ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
         return arr;
     }
@@ -139,6 +139,7 @@ public class Cache {
      AnchorPane titledAnchor;
      VBox taskVbox;
      */
+
 
 
 }

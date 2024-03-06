@@ -41,6 +41,7 @@ public class TaskListScreen implements Initializable {
     public RadioButton importanceRb;
     @FXML
     public AnchorPane mainAnchorPane;
+    private static TaskList taskList;
 
     private static boolean isFirstRun = true;
     int numTasks = 1;
@@ -72,9 +73,20 @@ public class TaskListScreen implements Initializable {
         //TODO so like a custom method using abstraction from ANOTHER method?
 
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        ArrayList<Node> arr = cache.taskElementsArr(vbox, 0,0);
+        taskList.setTaskList(vbox);
+        taskList.printTaskNames();
 
-        System.out.println(arr.get(0));
+        //ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
+
+        /*
+        for (int i = 0; i < numTasks; i++) {
+            ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
+            System.out.println("Task " + i + ": " + ((TextField)arr.get(0)).getText());
+        }
+
+         */
+        //ArrayList<Node> arr = cache.taskElementsArr(vbox, 0);
+        //System.out.println(arr.get(0));
 
 
         //cache.updateFile();
@@ -88,7 +100,7 @@ public class TaskListScreen implements Initializable {
                 vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
                 cache.setTasksList(vbox.getChildren());
                 cache.setVbox(vbox);
-                //System.out.println(vbox.getChildren().get(0).);
+                taskList = new TaskList(vbox);
                 isFirstRun = false;
             } else { //TODO and just keep this
                 vbox.getChildren().setAll(cache.getTasksList());
