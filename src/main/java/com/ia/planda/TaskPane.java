@@ -5,9 +5,13 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class TaskPane extends AnchorPane {
     @FXML
@@ -26,7 +30,13 @@ public class TaskPane extends AnchorPane {
     public TitledPane taskPane;
     @FXML
     public AnchorPane taskAnchor;
+    @FXML
+    public AnchorPane titledAnchor;
+    @FXML
+    public VBox taskVbox;
 
+    public TaskPane() {
+    }
 
     public void onDeleteButtonClicked(ActionEvent event) {
         if (taskAnchor.getParent().getClass() == VBox.class) {
@@ -88,5 +98,13 @@ public class TaskPane extends AnchorPane {
 
     public void setTaskPane(TitledPane taskPane) {
         this.taskPane = taskPane;
+    }
+
+    public AnchorPane getTitledAnchor() {
+        return titledAnchor;
+    }
+
+    public void setTitledAnchor(AnchorPane titledAnchor) {
+        this.titledAnchor = titledAnchor;
     }
 }

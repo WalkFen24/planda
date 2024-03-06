@@ -1,15 +1,20 @@
 package com.ia.planda;
 
+import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Cache {
@@ -18,7 +23,7 @@ public class Cache {
     private static List<? extends Node> tasksList;
     private static VBox vbox;
 
-    RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+    private final RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
 
     public Cache() throws FileNotFoundException {
     }
@@ -59,14 +64,28 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
-        //vbox.getChildren().setAll(tasksList);
         updateFile(0);
     }
 
     public static void updateFile(int n) throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
 
-        System.out.println();
+
+
+
+
+        //FAILED ATTEMPTS
+
+        //System.out.println(tasksList.getClass());
+        //System.out.println(tasksList.get(0).getClass());
+        //AnchorPane ap = (AnchorPane)tasksList.get(0);
+        //System.out.println(ap);
+        //System.out.println(ap.getChildren().get(0).getClass());
+        //TitledPane tp = (TitledPane)ap.getChildren().get(0);
+        //System.out.println(tp);
+        //System.out.println(tp);
+
+
         //AnchorPane pane = (AnchorPane)vbox.getChildren().get(0);
         //TitledPane tp = (TitledPane)pane.getChildren().get(0);
         //System.out.println(tp.getChildrenUnmodifiable().get(0));
@@ -97,4 +116,29 @@ public class Cache {
 
          */
     }
+
+    public ArrayList<Node> taskElementsArr(VBox taskList, int task, int n) {
+        AnchorPane ap = (AnchorPane) taskList.getChildren().get(task);
+        TitledPane tp = (TitledPane) ap.getChildren().get(0);
+        AnchorPane ap2 = (AnchorPane) tp.getContent();
+        VBox vbox = (VBox) ap2.getChildren().get(0);
+        FlowPane fp = (FlowPane) vbox.getChildren().get(n);
+        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
+        return arr;
+    }
+
+
+    /*TextField taskNameText;
+     DatePicker datePicker;
+     TextArea taskDetailsText;
+     ButtonBar taskButtonBar;
+     Button deleteButton;
+     Button Complete;
+     TitledPane taskPane;
+     AnchorPane taskAnchor;
+     AnchorPane titledAnchor;
+     VBox taskVbox;
+     */
+
+
 }
