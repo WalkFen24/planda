@@ -32,7 +32,7 @@ public class FocusSetupScreen implements Initializable {
     public AnchorPane mainAnchorPane;
     Cache cache = new Cache();
 
-    public FocusSetupScreen() throws FileNotFoundException {
+    public FocusSetupScreen() throws IOException {
     }
 
     public void onStartButtonClicked(ActionEvent event) throws IOException {

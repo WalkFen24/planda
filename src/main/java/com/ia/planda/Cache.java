@@ -1,20 +1,12 @@
 package com.ia.planda;
 
-import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.util.converter.LocalDateStringConverter;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
+import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Cache {
@@ -22,14 +14,19 @@ public class Cache {
     private static int initFocusTime;
     private static List<? extends Node> tasksList;
     private static VBox vbox;
+    private static TaskList taskList;
 
-    private final RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
+    private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
+    private FileWriter fw = new FileWriter("tasks.txt");
 
-    public Cache() throws FileNotFoundException {
+    public Cache() throws IOException {
+        //file = new RandomAccessFile(new File("tasks.txt"), "r");
+        //fw = new FileWriter("tasks.txt");
     }
 
     public void setVbox(VBox vbox) {
         Cache.vbox = vbox;
+        taskList = new TaskList(vbox);
     }
     public VBox getVbox() {
         return vbox;
@@ -50,29 +47,58 @@ public class Cache {
         return Cache.tasksList;
     }
 
-    public void setUpContainer() throws IOException {
+    public void setUpCache() throws IOException {
         //read info from the file to the cache
+
+        System.out.println("-!-Text File Content Init-!-");
+        file.seek(0);
+        while(file.getFilePointer() != file.length()) {
+            System.out.println(file.readLine());
+        }
+
+        /*
         if (file.getFilePointer() == file.length()) {
             System.out.println("Done parsing file");
             file.seek(0);
         } else {
             System.out.println(file.readLine()); //TODO replace with code to read the lines into the proper storage locations
             //TODO so it assigns the first line as the name field of the first TaskPane stored in the vbox's collection
-            setUpContainer();
+            setUpCache();
         }
+
+         */
     }
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
-        updateFile(0);
+        //write to file
+        for (int i = 0; i < tasksList.size(); i++) {
+            writeLn("Name: " + taskList.getTaskNameText(i));
+            if (taskList.getDate(i) == null) {
+                writeLn("Due date: ");
+            } else {
+                writeLn("Due date: " + taskList.getDate(i).toString());
+            }
+            writeLn("Estimated time: " + taskList.getReqTime(i));
+            writeLn("Goal time per day: " + taskList.getGoalTime(i));
+            writeLn("Importance: " + taskList.getImportance(i));
+            writeLn("Details: " + taskList.getTaskDetailsText(i));
+            writeLn("");
+        }
+
+        fw.close();
+
+        //read and print file contents to check that it was updated properly
+        System.out.println("---Text File Content---");
+        file.seek(0);
+        while(file.getFilePointer() != file.length()) {
+            System.out.println(file.readLine());
+        }
+        //updateFile(0);
     }
 
     public static void updateFile(int n) throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
-
-
-
-
 
         //FAILED ATTEMPTS
 
@@ -117,28 +143,8 @@ public class Cache {
          */
     }
 
-    public ArrayList<Node> taskElementsArr(VBox taskList, int task, int n) {
-        AnchorPane ap = (AnchorPane) taskList.getChildren().get(task);
-        TitledPane tp = (TitledPane) ap.getChildren().get(0);
-        AnchorPane ap2 = (AnchorPane) tp.getContent();
-        VBox vbox = (VBox) ap2.getChildren().get(0);
-        FlowPane fp = (FlowPane) vbox.getChildren().get(n);
-        ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
-        return arr;
+    public void writeLn(String str) throws IOException {
+        fw.write(str + "\n");
     }
-
-
-    /*TextField taskNameText;
-     DatePicker datePicker;
-     TextArea taskDetailsText;
-     ButtonBar taskButtonBar;
-     Button deleteButton;
-     Button Complete;
-     TitledPane taskPane;
-     AnchorPane taskAnchor;
-     AnchorPane titledAnchor;
-     VBox taskVbox;
-     */
-
 
 }
