@@ -86,10 +86,9 @@ public class Cache {
         fw = new FileWriter(file);
         //write to file
         for (int i = 0; i < vbox.getChildren().size(); i++) {
-            System.out.println(taskList.getTaskNameText(i));
-            fw.write("Test..." + i + "\n");
-            //fw.write(taskList.getTaskNameText(i));
-            /*writeLn("Name: " + taskList.getTaskNameText(i));
+            //System.out.println(taskList.getTaskNameText(i));
+            fw.write("^^^Task " + i + "^^^\n");
+            writeLn("Name: " + taskList.getTaskNameText(i));
             if (taskList.getDate(i) == null) {
                 writeLn("Due date: ");
             } else {
@@ -100,8 +99,6 @@ public class Cache {
             writeLn("Importance: " + taskList.getImportance(i));
             writeLn("Details: " + taskList.getTaskDetailsText(i));
             writeLn("");
-
-             */
         }
         fw.close();
 
