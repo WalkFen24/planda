@@ -1,21 +1,5 @@
-^^^Task 0^^^
-Name: String
-Due date: 2024-03-15
-Estimated time: 
-Goal time per day: 
-Importance: 
-Details: 
-
 ^^^Task 1^^^
-Name: nqm3ogyivodpsbwjha
-Due date: 
-Estimated time: 
-Goal time per day: 
-Importance: 
-Details: 
-
-^^^Task 2^^^
-Name: 
+Name: ^^^Task 1^^^
 Due date: 
 Estimated time: 
 Goal time per day: 

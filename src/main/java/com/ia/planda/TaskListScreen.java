@@ -90,10 +90,13 @@ public class TaskListScreen implements Initializable {
                 cache.setVbox(vbox);
                 taskList = new TaskList(vbox);
 
-                taskList.setTaskNameText(0, "String");
-                taskList.setDate(0, "2024-3-15");
+                //taskList.setTaskNameText(0, "String");
+                //taskList.setDate(0, "2024-3-15");
 
                 cache.updateTaskList();
+
+                System.out.println("-----Cache set up test-----");
+                cache.setUpCache();
 
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
