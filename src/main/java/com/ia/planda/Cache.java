@@ -8,6 +8,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Scanner;
 
 public class Cache {
     //holds data to be used and transferred between classes, for short-term storage
@@ -16,8 +17,9 @@ public class Cache {
     private static VBox vbox;
     private static TaskList taskList;
 
-    private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
-    private FileWriter fw = new FileWriter("tasks.txt");
+    private File file = new File("tasks.txt");
+    private Scanner scan = new Scanner(file);
+    private FileWriter fw = new FileWriter("tasks.txt", true);
 
     public Cache() throws IOException {
         //file = new RandomAccessFile(new File("tasks.txt"), "r");
@@ -51,10 +53,19 @@ public class Cache {
         //read info from the file to the cache
 
         System.out.println("-!-Text File Content Init-!-");
+
+        scan = new Scanner(file);
+        while(scan.hasNext()) {
+            System.out.println(scan.nextLine());
+        }
+
+        /*
         file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());
         }
+
+         */
 
 
         /*
@@ -72,10 +83,13 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //TODO save important Cache info to the text file for persistent storage before closing the app
-
+        fw = new FileWriter(file);
         //write to file
-        for (int i = 0; i < tasksList.size(); i++) {
-            writeLn("Name: " + taskList.getTaskNameText(i));
+        for (int i = 0; i < vbox.getChildren().size(); i++) {
+            System.out.println(taskList.getTaskNameText(i));
+            fw.write("Test..." + i + "\n");
+            //fw.write(taskList.getTaskNameText(i));
+            /*writeLn("Name: " + taskList.getTaskNameText(i));
             if (taskList.getDate(i) == null) {
                 writeLn("Due date: ");
             } else {
@@ -86,16 +100,26 @@ public class Cache {
             writeLn("Importance: " + taskList.getImportance(i));
             writeLn("Details: " + taskList.getTaskDetailsText(i));
             writeLn("");
-        }
 
+             */
+        }
         fw.close();
 
+        System.out.println("---Text File Content---");
+        scan = new Scanner(file);
+        while(scan.hasNext()) {
+            System.out.println(scan.nextLine());
+        }
+
+        /*
         //read and print file contents to check that it was updated properly
         System.out.println("---Text File Content---");
         file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());
         }
+
+         */
         //updateFile(0);
     }
 

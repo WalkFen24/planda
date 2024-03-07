@@ -8,18 +8,12 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main extends Application {
 
-    private static RandomAccessFile file;
-
-    static {
-        try {
-            file = new RandomAccessFile(new File("tasks.txt"), "r");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private File file = new File("tasks.txt");
+    private Scanner scan = new Scanner(file);
 
     public static Cache cache;
 
@@ -40,10 +34,17 @@ public class Main extends Application {
                 cache.updateFile();
                 //cache.setUpCache();
                 System.out.println("~~~Text File Content On Close~~~");
+                scan = new Scanner(file);
+                while(scan.hasNext()) {
+                    System.out.println(scan.nextLine());
+                }
+                /*
                 file.seek(0);
                 while(file.getFilePointer() != file.length()) {
                     System.out.println(file.readLine());
                 }
+
+                 */
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -54,10 +55,19 @@ public class Main extends Application {
 
     public static void main(String[] args) throws IOException {
         System.out.println("~~~Text File Content Initially~~~");
+
+
+        Scanner scan = new Scanner(new File("tasks.txt"));
+        while(scan.hasNext()) {
+            System.out.println(scan.nextLine());
+        }
+        /*
         file.seek(0);
         while(file.getFilePointer() != file.length()) {
             System.out.println(file.readLine());
         }
+
+         */
 
         launch();
     }
