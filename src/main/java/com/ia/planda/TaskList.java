@@ -47,28 +47,23 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
         return arr;
     }
 
-    public ArrayList<ArrayList<Node>> getTaskList() {
-        return taskList;
-    }
-
     public void setTaskList() {
         taskList.clear();
-        //***Debugging: I was having issues before because I forgot to clear taskList, and the below getter only
-        //ADDS to the existing list, it doesn't clear it on its own to completely reset it, so it was just constantly
-        //appending onto itself, almost duplicating, instead of starting fresh every time.
         taskList = getTaskList(0);
     }
 
     public ArrayList<ArrayList<Node>> getTaskList(int task) {
         //task = column, field = rows
         if (task == vboxTaskList.getChildren().size()) {
-            //System.out.println("TaskList created.");
             return taskList;
         } else {
-            //taskList.add(taskElementsArr(vboxTaskList, task));
             taskList.add(taskElementsArr(task));
             return getTaskList(task + 1);
         }
+    }
+
+    public ArrayList<ArrayList<Node>> getTaskList() {
+        return taskList;
     }
 
     public void printTaskNames() {
@@ -78,8 +73,17 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
         }
     }
 
+    public void printElementIndexes() {
+        //to save me the trouble of needing to count and carefully look at the FXML file everytime I change what's in a TaskPane
+        System.out.println("---Indexes of ID's in TaskPane vbox---");
+        for (int i = 0; i < taskList.get(0).size(); i++) {
+            System.out.println("index: " + i + " *** element id: " + taskList.get(0).get(i).getId());
+        }
+    }
 
-    /*TextField taskNameText;
+
+    /* ELEMENTS
+    TextField taskNameText;
      DatePicker datePicker;
      TextArea taskDetailsText;
      ButtonBar taskButtonBar;
@@ -91,14 +95,7 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
      VBox taskVbox;
      */
 
-    public Class getElementClass(int n) {
-        return taskList.get(0).get(n).getClass();
-    }
-
-
     //IMPORTANT GETTERS
-    //TODO there's probably a better (improved extensibility) way to do this than having to use a print method to figure out what the indexes of
-    //TODO each element are
     public String getTaskNameText(int task) {
         return ((TextField)(taskList.get(task).get(0))).getText();
 
@@ -121,14 +118,7 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     }
 
 
-    public void printElementIndexes() {
-        //to save me the trouble of needing to count and carefully look at the FXML file everytime I change what's in a TaskPane
-        System.out.println("---Indexes of ID's in TaskPane vbox---");
-        for (int i = 0; i < taskList.get(0).size(); i++) {
-            System.out.println("index: " + i + " *** element id: " + taskList.get(0).get(i).getId());
-        }
-    }
-
+    //IMPORTANT SETTERS
     public void setTaskNameText(int task, String text) {
         ((TextField)(taskList.get(task).get(0))).setText(text);
     }

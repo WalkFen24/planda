@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="starting to get cache to read from the file and store that">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

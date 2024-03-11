@@ -4,19 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class TaskListScreen implements Initializable {
@@ -89,17 +84,11 @@ public class TaskListScreen implements Initializable {
                 cache.setTasksList(vbox.getChildren());
                 cache.setVbox(vbox);
                 taskList = new TaskList(vbox);
-
-                //taskList.setTaskNameText(0, "String");
-                //taskList.setDate(0, "2024-3-15");
-
-
-                System.out.println("-----Cache set up test-----");
-                cache.setUpCache();
+                cache.setUpTaskList();
 
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
-            } else { //TODO and just keep this
+            } else {
                 vbox.getChildren().setAll(cache.getTasksList());
             }
         } catch (IOException e) {
