@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="fixing the update file method">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="starting to get cache to read from the file and store that">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709840056455</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="starting to get cache to read from the file and store that">
+      <created>1709848725071</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709848725071</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,7 +297,8 @@
     <MESSAGE value="debugging persistent storage" />
     <MESSAGE value="fixed the filewriter issue" />
     <MESSAGE value="fixing the update file method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing the update file method" />
+    <MESSAGE value="starting to get cache to read from the file and store that" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to get cache to read from the file and store that" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

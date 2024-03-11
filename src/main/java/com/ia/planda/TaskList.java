@@ -134,25 +134,24 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     }
     public void setDate(int task, String dateStr) {
         Scanner scan = new Scanner(dateStr);
-        scan.useDelimiter("-");
-        LocalDate ld = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
-        ((DatePicker)(taskList.get(task).get(1))).setValue(ld);
+        if (!dateStr.equals("")) {
+            scan.useDelimiter("-");
+            LocalDate ld = LocalDate.of(scan.nextInt(), scan.nextInt(), scan.nextInt());
+            ((DatePicker)(taskList.get(task).get(1))).setValue(ld);
+        }
     }
 
-    /*
-    public void setReqTime(int task) {
-        ((TextField)(taskList.get(task).get(3))).getText();
+    public void setReqTime(int task, String time) {
+        ((TextField)(taskList.get(task).get(3))).setText(time);
     }
 
-    public void setGoalTime(int task) {
-        ((TextField)(taskList.get(task).get(5))).getText();
+    public void setGoalTime(int task, String time) {
+        ((TextField)(taskList.get(task).get(5))).setText(time);
     }
-    public void setImportance(int task) {
-        ((TextField)(taskList.get(task).get(7))).getText();
+    public void setImportance(int task, String num) {
+        ((TextField)(taskList.get(task).get(7))).setText(num);
     }
-    public void setTaskDetailsText(int task) {
-        ((TextArea)(taskList.get(task).get(8))).getText();
+    public void setTaskDetailsText(int task, String text) {
+        ((TextArea)(taskList.get(task).get(8))).setText(text);
     }
-
-     */
 }
