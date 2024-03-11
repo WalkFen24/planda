@@ -62,7 +62,7 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     public ArrayList<ArrayList<Node>> getTaskList(int task) {
         //task = column, field = rows
         if (task == vboxTaskList.getChildren().size()) {
-            System.out.println("TaskList created.");
+            //System.out.println("TaskList created.");
             return taskList;
         } else {
             //taskList.add(taskElementsArr(vboxTaskList, task));

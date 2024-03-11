@@ -8,20 +8,22 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main extends Application {
 
-    private static RandomAccessFile file;
+    private File file = new File("tasks.txt");
+    private Scanner scan = new Scanner(file);
+
+    public static Cache cache;
 
     static {
         try {
-            file = new RandomAccessFile(new File("tasks.txt"), "r");
-        } catch (FileNotFoundException e) {
+            cache = new Cache();
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-    public static Cache cache;
 
     public Main() throws FileNotFoundException {
     }
@@ -33,12 +35,14 @@ public class Main extends Application {
         stage.setTitle("Planda Task List");
         stage.setScene(scene);
         stage.show();
-        cache = new Cache();
         stage.setOnCloseRequest(event -> {
             //save important Cache info to the text file for persistent storage before closing the app
             try {
                 cache.updateFile();
-                cache.setUpCache();
+
+                System.out.println("~~~Text File Content On Close~~~");
+                cache.printTasksFile();
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -48,42 +52,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println("-!-Text File Content Init-!-");
-        file.seek(0);
-        while(file.getFilePointer() != file.length()) {
-            System.out.println(file.readLine());
-        }
+        System.out.println("~~~Text File Content Initially~~~");
+        cache.printTasksFile();
 
         launch();
     }
-    /*
-    public void setUpContainer(Cache cache) throws IOException {
-        //TODO read info from the file to the cache/cache
-        if (file.getFilePointer() == file.length()) {
-            System.out.println("Done parsing file");
-        } else {
-            System.out.println(file.readLine());
-
-            setUpContainer(cache);
-        }
-    }
-
-    public void updateFile(Cache cache) {
-        //TODO save important Cache info to the text file for persistent storage before closing the app
-    }
-
-
-     */
-
-
-
-            /*
-        RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
-        file.seek(0);
-        while(file.getFilePointer() != file.length()) {
-            System.out.println(file.readLine());
-        }
-
-         */
 
 }

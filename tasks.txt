@@ -1,5 +1,6 @@
-Name: 
-Due date: 2024-03-15
+^^^Task 1^^^
+Name: ^^^Task 1^^^
+Due date: 
 Estimated time: 
 Goal time per day: 
 Importance: 
