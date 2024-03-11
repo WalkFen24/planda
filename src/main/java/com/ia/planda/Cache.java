@@ -1,14 +1,10 @@
 package com.ia.planda;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
-import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,11 +47,9 @@ public class Cache {
         return Cache.tasksList;
     }
 
-    public void setUpCache() throws IOException {
-        //read info from the file to the cache
-
-        //(read the lines into the proper storage locations
-        //so it assigns the first line as the name field of the first TaskPane stored in the vbox's collection)
+    public void setUpTaskList() throws IOException {
+        //read the lines from the text file into the proper storage locations,
+        // so it assigns the content of each line as the fields of each sequential TaskPane of the TaskList
 
         scan = new Scanner(file);
         int i = 0;
@@ -73,16 +67,15 @@ public class Cache {
                 taskList.setTaskList();
             }
         }
-        System.out.println("Save loaded into cache.");
+        System.out.println("Save loaded.");
     }
 
     public void updateFile() throws IOException {
-        //TODO save important Cache info to the text file for persistent storage before closing the app
+        //save important TaskList info to the text file for persistent storage before closing the app
         fw = new FileWriter(file);
         //write to file
         for (int i = 0; i < vbox.getChildren().size(); i++) {
-            //System.out.println(taskList.getTaskNameText(i));
-            fw.write("^^^Task " + (i+1) + "^^^\n");
+            fw.write("^^^Task " + (i+1) + "^^^\n"); //to make the file easier to manually read if needed
             writeLn(taskList.getTaskNameText(i));
             if (taskList.getDate(i) == null) {
                 writeLn("");
@@ -93,7 +86,6 @@ public class Cache {
             writeLn(taskList.getGoalTime(i));
             writeLn(taskList.getImportance(i));
             writeLn(taskList.getTaskDetailsText(i));
-            //writeLn("");
         }
         fw.close();
 
