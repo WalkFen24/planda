@@ -93,7 +93,6 @@ public class TaskListScreen implements Initializable {
                 //taskList.setTaskNameText(0, "String");
                 //taskList.setDate(0, "2024-3-15");
 
-                cache.updateTaskList();
 
                 System.out.println("-----Cache set up test-----");
                 cache.setUpCache();

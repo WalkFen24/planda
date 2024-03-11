@@ -1,8 +1,14 @@
 ^^^Task 1^^^
-Name: ^^^Task 1^^^
-Due date: 
-Estimated time: 
-Goal time per day: 
-Importance: 
-Details: 
+test
+
+
+
+
+
+^^^Task 2^^^
+test 2
+
+
+
+
 

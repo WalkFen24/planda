@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="starting to get cache to read from the file and store that">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,28 +224,49 @@
       <option name="project" value="LOCAL" />
       <updated>1709669177617</updated>
     </task>
-    <task id="LOCAL-00018" summary="TaskList class debugged">
-      <created>1709689626999</created>
+    <task id="LOCAL-00018" summary="adding cache functionality">
+      <created>1709675299808</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1709689626999</updated>
+      <updated>1709675299808</updated>
     </task>
-    <task id="LOCAL-00019" summary="lots of debugging, coding persistent and temp storage (with some bugs still), and some added features to the task screen">
-      <created>1709713762552</created>
+    <task id="LOCAL-00019" summary="workspace fix">
+      <created>1709761229871</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1709713762552</updated>
+      <updated>1709761229871</updated>
     </task>
-    <task id="LOCAL-00020" summary="workspace fix">
-      <created>1710132342911</created>
+    <task id="LOCAL-00020" summary="debugging persistent storage">
+      <created>1709766024294</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1710132342911</updated>
+      <updated>1709766024294</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed the filewriter issue">
+      <created>1709836718800</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709836718800</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixing the update file method">
+      <created>1709840056455</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1709840056455</updated>
+    </task>
+    <task id="LOCAL-00023" summary="starting to get cache to read from the file and store that">
+      <created>1709848725071</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709848725071</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,10 +292,23 @@
     <MESSAGE value="updates to the button bar functionality, short term saving of tasks, persistent storage code updated" />
     <MESSAGE value="debugging the file functionality" />
     <MESSAGE value="debugging" />
-    <MESSAGE value="TaskList class debugged" />
-    <MESSAGE value="lots of debugging, coding persistent and temp storage (with some bugs still), and some added features to the task screen" />
+    <MESSAGE value="adding cache functionality" />
     <MESSAGE value="workspace fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
+    <MESSAGE value="debugging persistent storage" />
+    <MESSAGE value="fixed the filewriter issue" />
+    <MESSAGE value="fixing the update file method" />
+    <MESSAGE value="starting to get cache to read from the file and store that" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to get cache to read from the file and store that" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

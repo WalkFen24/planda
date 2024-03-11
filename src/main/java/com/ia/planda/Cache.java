@@ -1,5 +1,7 @@
 package com.ia.planda;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.LocalDateStringConverter;
@@ -56,17 +58,22 @@ public class Cache {
         //so it assigns the first line as the name field of the first TaskPane stored in the vbox's collection)
 
         scan = new Scanner(file);
-        taskList.setTaskNameText(0, scan.nextLine());
-        /*int i = 0;
-        while(scan.hasNext()) {
+        int i = 0;
+        while (scan.hasNextLine()) {
+            scan.nextLine();
             taskList.setTaskNameText(i, scan.nextLine());
-            //System.out.println(scan.nextLine());
+            taskList.setDate(i, scan.nextLine());
+            taskList.setReqTime(i, scan.nextLine());
+            taskList.setGoalTime(i, scan.nextLine());
+            taskList.setImportance(i, scan.nextLine());
+            taskList.setTaskDetailsText(i, scan.nextLine());
             i++;
+            if (scan.hasNextLine()) {
+                vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+                taskList.setTaskList();
+            }
         }
-
-         */
-        System.out.println("Done parsing file.");
-        //System.out.println("Save loaded into cache.");
+        System.out.println("Save loaded into cache.");
     }
 
     public void updateFile() throws IOException {
@@ -76,46 +83,27 @@ public class Cache {
         for (int i = 0; i < vbox.getChildren().size(); i++) {
             //System.out.println(taskList.getTaskNameText(i));
             fw.write("^^^Task " + (i+1) + "^^^\n");
-            writeLn("Name: " + taskList.getTaskNameText(i));
+            writeLn(taskList.getTaskNameText(i));
             if (taskList.getDate(i) == null) {
-                writeLn("Due date: ");
+                writeLn("");
             } else {
-                writeLn("Due date: " + taskList.getDate(i).toString());
+                writeLn(taskList.getDate(i).toString());
             }
-            writeLn("Estimated time: " + taskList.getReqTime(i));
-            writeLn("Goal time per day: " + taskList.getGoalTime(i));
-            writeLn("Importance: " + taskList.getImportance(i));
-            writeLn("Details: " + taskList.getTaskDetailsText(i));
-            writeLn("");
+            writeLn(taskList.getReqTime(i));
+            writeLn(taskList.getGoalTime(i));
+            writeLn(taskList.getImportance(i));
+            writeLn(taskList.getTaskDetailsText(i));
+            //writeLn("");
         }
         fw.close();
 
         //read and print file contents to check that it was updated properly
         System.out.println("---Text File Content---");
         printTasksFile();
-        /*
-        //read and print file contents to check that it was updated properly
-        System.out.println("---Text File Content---");
-        file.seek(0);
-        while(file.getFilePointer() != file.length()) {
-            System.out.println(file.readLine());
-        }
-
-         */
-        //updateFile(0);
     }
 
     public void writeLn(String str) throws IOException {
         fw.write(str + "\n");
-    }
-
-    public void updateTaskList() throws IOException {
-        if (vbox == null) {
-            System.out.println("vbox in cache is null.");
-        } else {
-            //file.seek(0);
-            //System.out.println("done reading file in cache");
-        }
     }
 
     public void printTasksFile() throws FileNotFoundException {
