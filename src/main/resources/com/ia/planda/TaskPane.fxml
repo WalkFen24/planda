@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
+<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
    <children>
       <TitledPane fx:id="taskPane" wrapText="true">
          <content>
@@ -35,8 +35,9 @@
                         </FlowPane>
                         <ButtonBar fx:id="taskButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
                            <buttons>
-                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClicked" text="Delete" />
-                              <Button fx:id="Complete" mnemonicParsing="false" onAction="#onCompleteButtonClicked" text="Complete" />
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClicked" prefHeight="25.0" text="Delete" />
+                              <Button fx:id="completeButton" mnemonicParsing="false" onAction="#onCompleteButtonClicked" text="Complete" />
+                              <Button fx:id="addSubtaskButton" mnemonicParsing="false" onAction="#onAddSubtaskButtonClicked" text="Add Subtask" />
                            </buttons>
                            <opaqueInsets>
                               <Insets />

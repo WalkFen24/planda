@@ -40,33 +40,16 @@ public class TaskListScreen implements Initializable {
 
     private static boolean isFirstRun = true;
     int numTasks = 1;
-    int completeTasks = 0;
+    //int completeTasks = 0;
     Cache cache = new Cache();
 
-    private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
+    //private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
 
     public TaskListScreen() throws IOException {
-        //TODO delete this - I was just trying the RAF stuff out
-
-        /*
-        RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "rw");
-        file.seek(0);
-        while(file.getFilePointer() != file.length()) {
-            System.out.println(file.readLine());
-        }
-
-         */
     }
 
     public void onAddButtonClicked(ActionEvent event) throws IOException {
         //adds another task pane to the Vbox
-
-        //FUNCTIONAL but pretty bad, unless I make it its own method, but I wanted TaskPane to have all the
-        //getters and setters for the different fields so I could avoid this...
-        //TODO maybe a method that will return an ArrayList or LinkedList of TaskPanes, given the vbox?
-        //TODO and it basically does the below stuff over and over again I guess? Or I can make a separate
-        //TODO method to get that first arr (from the flowpane children) and then that way I can skip all those extra steps
-        //TODO so like a custom method using abstraction from ANOTHER method?
 
         vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
         taskList.setTaskList();
