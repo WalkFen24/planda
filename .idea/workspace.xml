@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="minor debugging and cleaning stuff" />
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -265,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710150401524</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="workspace fix">
+      <created>1710222361518</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1710222361518</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,13 +304,13 @@
     <MESSAGE value="debugging the file functionality" />
     <MESSAGE value="debugging" />
     <MESSAGE value="adding cache functionality" />
-    <MESSAGE value="workspace fix" />
     <MESSAGE value="debugging persistent storage" />
     <MESSAGE value="fixed the filewriter issue" />
     <MESSAGE value="fixing the update file method" />
     <MESSAGE value="starting to get cache to read from the file and store that" />
     <MESSAGE value="minor debugging and cleaning stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor debugging and cleaning stuff" />
+    <MESSAGE value="workspace fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
