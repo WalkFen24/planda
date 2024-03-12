@@ -17,6 +17,15 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     private static ArrayList<ArrayList<Node>> taskList = new ArrayList<>();
     private static VBox vboxTaskList;
 
+    /*
+    public static ArrayList<TaskList> taskListArr = new ArrayList<>();
+    //stores the list of the list of each task's subtasks
+    //rows = task
+    //columns = subtask
+
+     */
+
+
     public TaskList(VBox vboxTaskList) {
         TaskList.vboxTaskList = vboxTaskList;
         setTaskList();
@@ -82,6 +91,16 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     }
 
 
+
+
+
+
+
+
+
+
+
+
     /* ELEMENTS
     TextField taskNameText;
      DatePicker datePicker;
@@ -144,4 +163,5 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
     public void setTaskDetailsText(int task, String text) {
         ((TextArea)(taskList.get(task).get(8))).setText(text);
     }
+
 }

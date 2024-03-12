@@ -2,12 +2,14 @@ package com.ia.planda;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +27,7 @@ public class TaskPane extends AnchorPane {
     @FXML
     public Button deleteButton;
     @FXML
-    public Button Complete;
+    public Button completeButton;
     @FXML
     public TitledPane taskPane;
     @FXML
@@ -34,8 +36,15 @@ public class TaskPane extends AnchorPane {
     public AnchorPane titledAnchor;
     @FXML
     public VBox taskVbox;
+    @FXML
+    public Button addSubtaskButton;
 
-    public TaskPane() {
+    TaskList taskList;
+    Cache cache;
+
+
+    public TaskPane() throws IOException {
+        cache = new Cache();
     }
 
     public void onDeleteButtonClicked(ActionEvent event) {
@@ -90,8 +99,8 @@ public class TaskPane extends AnchorPane {
         return deleteButton;
     }
 
-    public Button getComplete() {
-        return Complete;
+    public Button getCompleteButton() {
+        return completeButton;
     }
 
     public TitledPane getTaskPane() {
@@ -108,5 +117,16 @@ public class TaskPane extends AnchorPane {
 
     public void setTitledAnchor(AnchorPane titledAnchor) {
         this.titledAnchor = titledAnchor;
+    }
+
+    public void onAddSubtaskButtonClicked(ActionEvent actionEvent) throws IOException {
+        taskVbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+
+        taskList = new TaskList(taskVbox);
+        taskList.setTaskList();
+        taskList.printTaskNames();
+
+        cache.updateFile();
+        //numTasks++;
     }
 }
