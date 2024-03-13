@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -121,11 +122,9 @@ public class TaskPane extends AnchorPane {
 
     public void onAddSubtaskButtonClicked(ActionEvent actionEvent) throws IOException {
         taskVbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-
-        taskList = new TaskList(taskVbox);
+        taskList = new TaskList(cache.getVbox());
         taskList.setTaskList();
         taskList.printTaskNames();
-
         cache.updateFile();
         //numTasks++;
     }
