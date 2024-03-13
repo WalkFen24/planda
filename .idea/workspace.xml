@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
-      <change afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/reward-pane.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/rewards-screen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-task.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +54,8 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "C:/Users/fdwal/OneDrive/Desktop/planda/src/main/java/com/ia/planda",
-    "last_opened_file_path": "C:/Users/fdwal/OneDrive/Desktop/planda",
+    "last_directory_selection": "C:/Users/walkfen24/Desktop/planda/src/main/java/com/ia/planda",
+    "last_opened_file_path": "C:/Users/walkfen24/Desktop/planda/src/main/resources/com/ia/planda",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -71,9 +64,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda" />
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources\com\ia\planda" />
-      <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda" />
