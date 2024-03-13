@@ -21,13 +21,13 @@ public class TaskListScreen implements Initializable {
     @FXML
     public Button focusButton;
     @FXML
-    public TitledPane taskPane;
+    public Button rewardsButton;
+    @FXML
+    public Button planButton;
     @FXML
     public Button taskListButton;
     @FXML
     public Button addButton;
-    //@FXML
-    //public Button deleteButton;
     @FXML
     public VBox vbox;
     @FXML
@@ -37,6 +37,8 @@ public class TaskListScreen implements Initializable {
     @FXML
     public AnchorPane mainAnchorPane;
     private static TaskList taskList;
+
+    //TODO replace almost all public variables with private
 
     private static boolean isFirstRun = true;
     int numTasks = 1;
@@ -110,17 +112,26 @@ public class TaskListScreen implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
         stage.getScene().setRoot(root); //changes the root node
         stage.show();
-
     }
 
-    public void onRewardsButtonClicked(ActionEvent event) {
+    public void onRewardsButtonClicked(ActionEvent event) throws IOException {
         //TODO remember to update with the NavigationBar class!
         cache.setTasksList(vbox.getChildren());
+
+        Stage stage = (Stage) rewardsButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("rewards-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
     }
 
-    public void onPlanButtonClicked(ActionEvent actionEvent) {
+    public void onPlanButtonClicked(ActionEvent actionEvent) throws IOException {
         //TODO remember to update with the NavigationBar class!
         cache.setTasksList(vbox.getChildren());
+
+        Stage stage = (Stage) planButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("plan-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
     }
 
     /*
