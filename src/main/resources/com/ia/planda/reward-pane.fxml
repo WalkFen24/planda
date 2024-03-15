@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="itemAnchor" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.RewardPane">
    <children>
-      <TitledPane fx:id="itemPane" text="Name" wrapText="true">
+      <TitledPane fx:id="itemPane" wrapText="true">
          <content>
             <AnchorPane fx:id="titledAnchor" minWidth="0.0" prefWidth="300.0">
                <children>
@@ -23,9 +23,9 @@
                            <children>
                               <Label fx:id="nameLabel" prefHeight="17.0" prefWidth="202.0" text="Name: " />
                               <Label fx:id="costLabel" prefHeight="17.0" prefWidth="84.0" text="Cost: __ pts" />
-                              <ImageView fx:id="image" fitHeight="150.0" fitWidth="275.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="275.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@panda%20front.png" />
+                                    <Image url="@panda front.png" />
                                  </image>
                                  <FlowPane.margin>
                                     <Insets left="15.0" />

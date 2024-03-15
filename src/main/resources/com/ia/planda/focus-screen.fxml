@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusScreen">
@@ -21,10 +22,16 @@
             <Insets />
          </opaqueInsets>
       </ButtonBar>
-      <ImageView fitHeight="248.0" fitWidth="235.0" layoutX="78.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@panda%20front.png" />
-         </image></ImageView>
+      <AnchorPane layoutX="12.0" layoutY="53.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#77d29cd1" height="362.0" stroke="TRANSPARENT" strokeType="INSIDE" width="313.0" />
+            <ImageView fitHeight="256.0" fitWidth="313.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@panda study no wall.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
       <ProgressBar fx:id="progressBar" layoutX="8.0" layoutY="490.0" prefHeight="25.0" prefWidth="319.0" progress="0.15" />
       <Label layoutX="125.0" layoutY="469.0" text="Time remaining:" />
       <Label fx:id="timeLabel" layoutX="137.0" layoutY="487.0" text="10 min">

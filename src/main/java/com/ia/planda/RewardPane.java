@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -30,7 +31,7 @@ public class RewardPane extends AnchorPane implements Initializable {
     @FXML
     public Label costLabel;
     @FXML
-    public ImageView image;
+    public ImageView imageView;
     @FXML
     public ButtonBar itemButtonBar;
     @FXML
@@ -94,5 +95,9 @@ public class RewardPane extends AnchorPane implements Initializable {
                 System.out.println(this.itemPane.getText() + " selection loaded");
             }
         }
+    }
+
+    public void setImage(Image image) {
+        imageView.setImage(image);
     }
 }
