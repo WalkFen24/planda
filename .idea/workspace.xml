@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="workspace fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-task.fxml" afterDir="false" />
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="plan functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/plan-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/walkfen24/Desktop/planda/src/main/java/com/ia/planda",
-    "last_opened_file_path": "C:/Users/walkfen24/Desktop/planda/src/main/resources/com/ia/planda",
+    "last_opened_file_path": "C:/Users/walkfen24/OneDrive/Desktop/planda",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -298,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710287709143</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="plan functionality">
+      <created>1710366880556</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1710366880556</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +334,8 @@
     <MESSAGE value="minor debugging and cleaning stuff" />
     <MESSAGE value="pomodoro timer functionality added. still need to exit thread when app closed though" />
     <MESSAGE value="workspace fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace fix" />
+    <MESSAGE value="plan functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="plan functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
