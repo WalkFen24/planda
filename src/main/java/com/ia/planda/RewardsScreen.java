@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -15,6 +17,7 @@ import javafx.scene.layout.VBox;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -47,7 +50,7 @@ public class RewardsScreen implements Initializable {
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
-            vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
+            //vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
 
             setItemList();
             setUpRewardPanes();
@@ -87,6 +90,8 @@ public class RewardsScreen implements Initializable {
     public void setUpRewardPanes() {
         Label costLabel;
         Label nameLabel;
+        ImageView imageView;
+        Image image;
 
         //ITEM 1
         int i = 0; //i = item in list
@@ -94,6 +99,9 @@ public class RewardsScreen implements Initializable {
         nameLabel.setText("Flower pot");
         costLabel = (Label)itemList.get(i).get(1);
         costLabel.setText("10 pts");
+        imageView = (ImageView)itemList.get(i).get(2);
+        image = new Image("flower.png");
+        imageView.setImage(image);
 
         //ITEM 2
         i++;
@@ -101,6 +109,9 @@ public class RewardsScreen implements Initializable {
         nameLabel.setText("Bookshelf");
         costLabel = (Label)itemList.get(i).get(1);
         costLabel.setText("30 pts");
+        imageView = (ImageView)itemList.get(i).get(2);
+        image = new Image("bookshelf.png");
+        imageView.setImage(image);
 
 
         //ITEM 3
@@ -110,8 +121,12 @@ public class RewardsScreen implements Initializable {
         //get the option to choose between different wallpaper colors (white, black, red, blue, etc.)
         costLabel = (Label)itemList.get(i).get(1);
         costLabel.setText("60 pts");
+        imageView = (ImageView)itemList.get(i).get(2);
+        image = new Image("panda study scene full.png");
+        imageView.setImage(image);
 
 
+        /*
         //ITEM 4
         i++;
         nameLabel = (Label)itemList.get(i).get(0);
@@ -119,5 +134,7 @@ public class RewardsScreen implements Initializable {
         //get the option to choose what kind of work Planda is doing (laptop, physical writing, reading)
         costLabel = (Label)itemList.get(i).get(1);
         costLabel.setText("100 pts");
+
+         */
     }
 }

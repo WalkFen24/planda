@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -19,7 +20,10 @@
             <Insets />
          </opaqueInsets>
       </ButtonBar>
-      <ImageView fitHeight="390.0" fitWidth="297.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="188.0" fitWidth="145.0" layoutX="99.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@panda front.png" />
+         </image></ImageView>
       <Slider fx:id="timeSlider" layoutX="19.0" layoutY="482.0" max="180.0" min="10.0" onMouseDragged="#updateTimeLabel" prefHeight="14.0" prefWidth="297.0" showTickLabels="true" showTickMarks="true" />
       <Label layoutX="104.0" layoutY="423.0" text="Length of focus session:" />
       <Label fx:id="timeLabel" alignment="CENTER" layoutX="24.0" layoutY="440.0" prefHeight="31.0" prefWidth="290.0" text="10 min" textAlignment="CENTER">
