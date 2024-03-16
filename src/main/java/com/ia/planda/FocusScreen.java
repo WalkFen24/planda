@@ -8,7 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -35,6 +37,13 @@ public class FocusScreen implements Initializable {
     public Label timeLabel;
     @FXML
     public AnchorPane mainAnchorPane;
+    @FXML
+    public ImageView sunflowerImageView;
+    @FXML
+    public ImageView bookshelfImageView;
+    @FXML
+    public Rectangle wallShape;
+
     public Cache cache = new Cache();
     public Timer timer = new Timer();
 
@@ -86,6 +95,8 @@ public class FocusScreen implements Initializable {
             }
         };
         timer.scheduleAtFixedRate(timerTask, 1000, 1000);
+
+
     }
 
     public static String timeToString(int ms) {
