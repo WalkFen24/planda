@@ -11,6 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,10 +30,6 @@ public class FocusScreen implements Initializable {
     public Button addTimeButton;
     @FXML
     public ProgressBar progressBar;
-    @FXML
-    public Button focusButton;
-    @FXML
-    public Button taskListButton;
     @FXML
     public Label timeLabel;
     @FXML
@@ -66,7 +63,8 @@ public class FocusScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        period = 60000 * cache.getInitFocusTime();
+        //period = 60000 * cache.getInitFocusTime();
+        period = 10000; //TODO delete this and uncomment the above
 
         timeLabel.setText(cache.getInitFocusTime() + " min");
         progressBar.setProgress(1);
@@ -89,14 +87,13 @@ public class FocusScreen implements Initializable {
                     if (progressBar.getProgress() <= 0) {
                         cancel();
                         timer.cancel();
+                        System.out.println("done");
                     }
                 });
                 i += 1000;
             }
         };
         timer.scheduleAtFixedRate(timerTask, 1000, 1000);
-
-
     }
 
     public static String timeToString(int ms) {
@@ -105,4 +102,5 @@ public class FocusScreen implements Initializable {
         seconds = seconds % 60;
         return (minutes + ":" + seconds);
     }
+
 }

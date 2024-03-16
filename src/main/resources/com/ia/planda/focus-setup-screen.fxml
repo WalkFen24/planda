@@ -20,9 +20,9 @@
             <Insets />
          </opaqueInsets>
       </ButtonBar>
-      <ImageView fitHeight="188.0" fitWidth="145.0" layoutX="99.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="301.0" fitWidth="310.0" layoutX="12.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@panda front.png" />
+            <Image url="@../../../panda front.png" />
          </image></ImageView>
       <Slider fx:id="timeSlider" layoutX="19.0" layoutY="482.0" max="180.0" min="10.0" onMouseDragged="#updateTimeLabel" prefHeight="14.0" prefWidth="297.0" showTickLabels="true" showTickMarks="true" />
       <Label layoutX="104.0" layoutY="423.0" text="Length of focus session:" />

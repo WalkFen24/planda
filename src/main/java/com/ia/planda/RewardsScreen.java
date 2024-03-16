@@ -14,10 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -74,20 +71,20 @@ public class RewardsScreen implements Initializable {
 
     public void setItemList() {
         itemList.clear();
-        itemList = getTaskList(0);
+        itemList = getItemList(0);
     }
 
-    public ArrayList<ArrayList<Node>> getTaskList(int item) {
+    public ArrayList<ArrayList<Node>> getItemList(int item) {
         //task = column, field = rows
         if (item == vbox.getChildren().size()) {
             return itemList;
         } else {
             itemList.add(itemElementsArr(item));
-            return getTaskList(item + 1);
+            return getItemList(item + 1);
         }
     }
 
-    public void setUpRewardPanes() {
+    public void setUpRewardPanes() throws IOException {
         Label costLabel;
         Label nameLabel;
         ImageView imageView;
@@ -125,16 +122,5 @@ public class RewardsScreen implements Initializable {
         image = new Image("panda study scene full.png");
         imageView.setImage(image);
 
-
-        /*
-        //ITEM 4
-        i++;
-        nameLabel = (Label)itemList.get(i).get(0);
-        nameLabel.setText("Planda's task");
-        //get the option to choose what kind of work Planda is doing (laptop, physical writing, reading)
-        costLabel = (Label)itemList.get(i).get(1);
-        costLabel.setText("100 pts");
-
-         */
     }
 }

@@ -72,6 +72,7 @@ public class Cache {
 
     public void updateFile() throws IOException {
         //save important TaskList info to the text file for persistent storage before closing the app
+
         fw = new FileWriter(file);
         //write to file
         for (int i = 0; i < vbox.getChildren().size(); i++) {

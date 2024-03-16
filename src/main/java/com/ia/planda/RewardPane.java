@@ -10,10 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -45,24 +42,45 @@ public class RewardPane extends AnchorPane implements Initializable {
     private File file = new File("items.txt");
     private Scanner scan = new Scanner(file);
     private Scanner strScan;
-    //private FileWriter fw = new FileWriter("items.txt", true);
+    private FileWriter fw = new FileWriter("items.txt", true);
+    private static int n = -1;
+    private String[] rewardNames = {"Flower pot", "Bookshelf", "Wallpaper colors"};
 
 
     public RewardPane() throws IOException {
         cache = new Cache();
+        n++;
     }
 
-    public void onBuyButtonClicked(ActionEvent event) {
+    public void onBuyButtonClicked(ActionEvent event) throws IOException {
         //check for adequate points, if enough, remove the cost from it and set owned to true
-        owned = true;
-        System.out.println(nameLabel.getText() + " purchased");
+        if (owned) {
+            System.out.println("You already own this one.");
+        } else {
+            owned = true;
+            System.out.println(nameLabel.getText() + " purchased");
+
+            Scanner scan = new Scanner(file);
+            String str = scan.nextLine();
+
+            fw = new FileWriter(file);
+            fw.write(str + nameLabel.getText() + ",");
+            fw.close();
+        }
     }
 
-    public void onSelectButtonClicked(ActionEvent event) {
+    public void onSelectButtonClicked(ActionEvent event) throws IOException {
         //check if owned, if so, select it
-        if (owned == true) {
+        if (owned) {
             selected = true;
             System.out.println(nameLabel.getText() + " selected");
+
+            Scanner scan = new Scanner(file);
+            String str = scan.nextLine();
+
+            fw = new FileWriter(file);
+            fw.write(str + "\n" + nameLabel.getText());
+            fw.close();
         }
     }
 
@@ -73,31 +91,28 @@ public class RewardPane extends AnchorPane implements Initializable {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        strScan = new Scanner(scan.nextLine());
-        //scans the string made up of the first line of the items.txt file, which stores the list of items that have been bought
-        strScan.useDelimiter(",");
-        //sequential scanning while loop suitable because there's only a few possible items to traverse through
+        if (scan.hasNextLine()) {
+            strScan = new Scanner(scan.nextLine());
+            //scans the string made up of the first line of the items.txt file, which stores the list of items that have been bought
+            strScan.useDelimiter(",");
+            //sequential scanning while-loop suitable because there's only a few possible items to traverse through
 
-        //checks if this reward has been saved as bought
-        boolean found = false;
-        while (strScan.hasNext() && !found) {
-            if (strScan.next().equalsIgnoreCase(itemPane.getText())) {
-                owned = true;
-                System.out.println(this.itemPane.getText() + " purchase loaded");
-                found = true;
+            //checks if this reward has been saved as bought
+            while (strScan.hasNext() && !owned && n < 3) {
+                if (strScan.next().equalsIgnoreCase(rewardNames[n])) {
+                    owned = true; //the field also acts as a flag for this while-loop
+                    System.out.println(rewardNames[n] + " purchase loaded");
+                }
+
+            }
+
+            //checks if this reward has been saved as selected
+            if (scan.hasNext()) {
+                if (scan.nextLine().equalsIgnoreCase(rewardNames[n])) {
+                    selected = true;
+                    System.out.println(rewardNames[n] + " selection loaded");
+                }
             }
         }
-
-        //checks if this reward has been saved as selected
-        if (scan.hasNext()) {
-            if (scan.nextLine().equalsIgnoreCase(itemPane.getText())) {
-                selected = true;
-                System.out.println(this.itemPane.getText() + " selection loaded");
-            }
-        }
-    }
-
-    public void setImage(Image image) {
-        imageView.setImage(image);
     }
 }
