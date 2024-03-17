@@ -25,6 +25,8 @@ public class RewardsScreen implements Initializable {
     public AnchorPane mainAnchorPane;
     @FXML
     public VBox vbox;
+    @FXML
+    public Label pointsLabel;
     public static final int rewardsNum = 4;
     private Cache cache = new Cache();
     public ArrayList<ArrayList<Node>> itemList = new ArrayList<>();
@@ -50,6 +52,10 @@ public class RewardsScreen implements Initializable {
 
             setItemList();
             setUpRewardPanes();
+
+            PointTracker pt = new PointTracker();
+            pointsLabel.setText("Points: " + pt.getPoints());
+            cache.setPointsLabel(pointsLabel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

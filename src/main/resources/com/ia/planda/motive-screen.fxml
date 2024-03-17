@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.MotiveScreen">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.MotiveScreen">
    <children>
       <Button fx:id="okayButton" layoutX="106.0" layoutY="527.0" mnemonicParsing="false" onAction="#onOkayButtonClicked" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #5cd68d;" text="Okay" />
       <Rectangle fx:id="wallPreview" arcHeight="5.0" arcWidth="5.0" fill="#76cf99d1" height="280.0" layoutX="27.0" layoutY="27.0" stroke="TRANSPARENT" strokeType="INSIDE" width="282.0" />

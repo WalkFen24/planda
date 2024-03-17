@@ -51,7 +51,9 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
         TitledPane tp = (TitledPane) ap.getChildren().get(0);
         AnchorPane ap2 = (AnchorPane) tp.getContent();
         VBox vboxTask = (VBox) ap2.getChildren().get(0);
-        FlowPane fp = (FlowPane) vboxTask.getChildren().get(0);
+        ScrollPane sp = (ScrollPane) vboxTask.getChildren().get(0);
+        AnchorPane ap3 = (AnchorPane) sp.getContent();
+        FlowPane fp = (FlowPane) ap3.getChildren().get(0);
         ArrayList<Node> arr = new ArrayList<>(fp.getChildren());
         return arr;
     }
@@ -89,16 +91,6 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
             System.out.println("index: " + i + " *** element id: " + taskList.get(0).get(i).getId());
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
     /* ELEMENTS

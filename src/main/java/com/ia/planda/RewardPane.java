@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 import java.io.*;
 import java.net.URL;
@@ -73,8 +74,10 @@ public class RewardPane extends AnchorPane implements Initializable {
         } else {
             owned = true;
             System.out.println(nameLabel.getText() + " purchased");
+            buyButton.setDisable(true);
 
             pt.decrPointsBy(cost);
+            cache.getPointsLabel().setText("Points: " + pt.getPoints());
 
             Scanner scan = new Scanner(file);
             String str = scan.nextLine();
@@ -144,6 +147,7 @@ public class RewardPane extends AnchorPane implements Initializable {
                 if (strScan.next().equalsIgnoreCase(rewardNames[n])) {
                     owned = true; //the field also acts as a flag for this while-loop
                     System.out.println(rewardNames[n] + " purchase loaded");
+                    buyButton.setDisable(true);
                 }
             }
 
@@ -152,7 +156,6 @@ public class RewardPane extends AnchorPane implements Initializable {
 
             //checks if this reward has been saved as selected
             while (strScan.hasNext() && !selected) {
-
                 if (strScan.next().equalsIgnoreCase(rewardNames[n])) {
                     selected = true; //the field also acts as a flag for this while-loop
                     System.out.println(rewardNames[n] + " selection loaded");

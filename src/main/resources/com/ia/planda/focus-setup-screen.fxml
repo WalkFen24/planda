@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusSetupScreen">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusSetupScreen">
    <children>
       <Button fx:id="startButton" layoutX="171.0" layoutY="526.0" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #5cd68d;" text="Start" />
       <ColorPicker fx:id="colorPicker" layoutX="36.0" layoutY="526.0" onAction="#updateWallColor" prefHeight="25.0" prefWidth="125.0" promptText="Background color">

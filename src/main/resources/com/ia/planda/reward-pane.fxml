@@ -36,7 +36,7 @@
                         <ButtonBar fx:id="itemButtonBar" buttonMinWidth="50.0" buttonOrder="" prefWidth="300.0">
                            <buttons>
                               <Button fx:id="buyButton" mnemonicParsing="false" onAction="#onBuyButtonClicked" text="Buy" />
-                              <Button fx:id="selectButton" mnemonicParsing="false" onAction="#onSelectButtonClicked" text="Select" />
+                              <Button fx:id="selectButton" mnemonicParsing="false" onAction="#onSelectButtonClicked" prefHeight="25.0" prefWidth="75.0" text="Select" />
                            </buttons>
                            <opaqueInsets>
                               <Insets />
