@@ -49,6 +49,7 @@ public class FocusSetupScreen implements Initializable {
 
     public void onStartButtonClicked(ActionEvent event) throws IOException {
         cache.setInitFocusTime((int)timeSlider.getValue());
+        cache.setWallColor(colorPicker.getValue());
 
         Stage stage = (Stage) startButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("focus-screen.fxml"));
