@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -66,8 +67,13 @@ public class FocusScreen implements Initializable {
     }
 
 
-    public void onEndButtonClicked(ActionEvent event) {
+    public void onEndButtonClicked(ActionEvent event) throws IOException {
         timer.cancel();
+
+        Stage stage = (Stage) endButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
     }
 
     public void onAddTimeButtonClicked(ActionEvent event) {
@@ -142,7 +148,7 @@ public class FocusScreen implements Initializable {
     }
 
     private int t;
-    public void celebrate() {
+    public void celebrate() throws IOException {
         timeLabel.setText("YOU DID IT!!!");
 
         t = 5000;
@@ -157,6 +163,15 @@ public class FocusScreen implements Initializable {
                         cancel();
                         celebrationTimer.cancel();
                         pandaDeskImageView.setImage(imageArr[0]);
+
+                        try {
+                            Stage stage = (Stage) endButton.getScene().getWindow(); //gets the stage
+                            Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
+                            stage.getScene().setRoot(root); //changes the root node
+                            stage.show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 });
                 t -= 100;
