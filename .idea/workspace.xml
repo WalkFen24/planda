@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="more debugging">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="permanently fixing workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/TaskPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/TaskPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/reward-pane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/reward-pane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/rewards-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/rewards-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
@@ -363,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710663956744</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="permanently fixing workspace">
+      <created>1710664073487</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1710664073487</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +383,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit 2.5 - added main" />
     <MESSAGE value="workspace commit" />
     <MESSAGE value="UI update - focus and tasklist screens" />
     <MESSAGE value="in class update" />
@@ -403,7 +407,8 @@
     <MESSAGE value="lots of debugging + wall color reward" />
     <MESSAGE value="all key coding done?" />
     <MESSAGE value="more debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="more debugging" />
+    <MESSAGE value="permanently fixing workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="permanently fixing workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
