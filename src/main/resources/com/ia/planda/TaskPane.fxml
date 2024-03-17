@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
+<AnchorPane fx:id="taskAnchor" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskPane">
    <children>
       <TitledPane fx:id="taskPane" wrapText="true">
          <content>
