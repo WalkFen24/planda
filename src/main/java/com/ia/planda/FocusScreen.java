@@ -37,11 +37,13 @@ public class FocusScreen implements Initializable {
     @FXML
     public AnchorPane mainAnchorPane;
     @FXML
-    public ImageView sunflowerImageView;
+    public ImageView flowerImageView;
     @FXML
     public ImageView bookshelfImageView;
     @FXML
     public Rectangle wallShape;
+
+    private static boolean wallColors;
 
     public Cache cache = new Cache();
     public Timer timer = new Timer();
@@ -75,6 +77,24 @@ public class FocusScreen implements Initializable {
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
             mainAnchorPane.getChildren().add(barAnchor);
             barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
+            Scanner scan = new Scanner(new File("items.txt"));
+            scan.nextLine();
+            Scanner strScan = new Scanner(scan.nextLine());
+            strScan.useDelimiter(",");
+            flowerImageView.setVisible(false);
+            bookshelfImageView.setVisible(false);
+
+            while (strScan.hasNext()) {
+                String item = strScan.next();
+                if (item.equalsIgnoreCase("Flower pot")) {
+                    flowerImageView.setVisible(true);
+                } else if (item.equalsIgnoreCase("Bookshelf")) {
+                    bookshelfImageView.setVisible(true);
+                } else if (item.equalsIgnoreCase("Wallpaper colors")) {
+                    wallShape.setFill(cache.getWallColor());
+                }
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -41,7 +41,7 @@
                   <Image url="@../../../panda working no letters.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="sunflowerImageView" fitHeight="92.0" fitWidth="27.0" layoutX="144.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="flowerImageView" fitHeight="92.0" fitWidth="27.0" layoutX="144.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../flower.png" />
                </image>

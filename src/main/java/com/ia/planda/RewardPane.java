@@ -45,6 +45,15 @@ public class RewardPane extends AnchorPane implements Initializable {
     private FileWriter fw = new FileWriter("items.txt", true);
     private static int n = -1;
     private String[] rewardNames = {"Flower pot", "Bookshelf", "Wallpaper colors"};
+
+    /*
+        I used this array instead of just nameLabel.getText() in the initializer because these RewardPanes are initialized
+        before the RewardsScreen finishes initializing, which means that their rewardNames haven't been set yet. It's true
+        that I could JUST use the n and arrays system to set up all the RewardPanes, but I think that would get more
+        confusing than simply having the RewardsScreen take care of it.
+        //TODO actually the more I think about it, using only n and arrays makes way more sense. REDO IT
+     */
+
     private PointTracker pt = new PointTracker();
 
 
@@ -56,13 +65,16 @@ public class RewardPane extends AnchorPane implements Initializable {
     public void onBuyButtonClicked(ActionEvent event) throws IOException {
         //check for adequate points, if enough, remove the cost from it and set owned to true
         Scanner costScan = new Scanner(costLabel.getText());
+        int cost = costScan.nextInt();
         if (owned) {
             System.out.println("You already own this one.");
-        } else if (pt.getPoints() < costScan.nextInt()) {
+        } else if (pt.getPoints() < cost) {
             System.out.println("You don't have enough points for this item quite yet. Keep earning points, then come back!");
         } else {
             owned = true;
             System.out.println(nameLabel.getText() + " purchased");
+
+            pt.decrPointsBy(cost);
 
             Scanner scan = new Scanner(file);
             String str = scan.nextLine();
@@ -75,19 +87,42 @@ public class RewardPane extends AnchorPane implements Initializable {
     }
 
     public void onSelectButtonClicked(ActionEvent event) throws IOException {
-        //check if owned, if so, select it
-        if (owned) {
+        //check if owned, if so, select it. If it's already selected, deselect it.
+        if (selected) {
+            selected = false;
+            System.out.println(nameLabel.getText() + " deselected");
+
+            Scanner scan = new Scanner(file);
+            String newItemsStr = scan.nextLine() + "\n";
+            Scanner strScan = new Scanner(scan.nextLine());
+            strScan.useDelimiter(",");
+            String current;
+            while(strScan.hasNext()) {
+                current = strScan.next();
+                if (!current.equalsIgnoreCase(nameLabel.getText())) {
+                    newItemsStr += current + ",";
+                }
+            }
+            newItemsStr += "\n" + scan.nextLine();
+            fw = new FileWriter(file);
+            fw.write(newItemsStr);
+            fw.close();
+
+            selectButton.setText("Select");
+        } else if (owned) {
             selected = true;
             System.out.println(nameLabel.getText() + " selected");
 
             Scanner scan = new Scanner(file);
             String str = scan.nextLine();
-            scan.nextLine();
+            String str2 = scan.nextLine();
             String str3 = scan.nextLine();
 
             fw = new FileWriter(file);
-            fw.write(str + "\n" + nameLabel.getText() + "\n" + str3);
+            fw.write(str + "\n" + str2 + nameLabel.getText() + ",\n" + str3);
             fw.close();
+
+            selectButton.setText("Deselect");
         }
     }
 
@@ -110,16 +145,24 @@ public class RewardPane extends AnchorPane implements Initializable {
                     owned = true; //the field also acts as a flag for this while-loop
                     System.out.println(rewardNames[n] + " purchase loaded");
                 }
-
             }
 
+            strScan = new Scanner(scan.nextLine());
+            strScan.useDelimiter(",");
+
             //checks if this reward has been saved as selected
-            if (scan.hasNext() && n < 3) {
-                if (scan.nextLine().equalsIgnoreCase(rewardNames[n])) {
-                    selected = true;
+            while (strScan.hasNext() && !selected) {
+
+                if (strScan.next().equalsIgnoreCase(rewardNames[n])) {
+                    selected = true; //the field also acts as a flag for this while-loop
                     System.out.println(rewardNames[n] + " selection loaded");
+                    selectButton.setText("Deselect");
                 }
             }
         }
+    }
+
+    public void resetN() {
+        n = -1;
     }
 }

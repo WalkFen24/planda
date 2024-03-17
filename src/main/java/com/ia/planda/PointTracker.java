@@ -17,7 +17,6 @@ public class PointTracker {
         scan.nextLine();
         scan.nextLine();
         points = Integer.parseInt(scan.nextLine());
-        printPoints();
     }
 
     public void printPoints() {
@@ -42,5 +41,9 @@ public class PointTracker {
 
     public void incrPointsBy(int a) throws IOException {
         setPoints(points + a);
+    }
+
+    public void decrPointsBy(int s) throws IOException {
+        setPoints(points - s);
     }
 }

@@ -47,7 +47,6 @@ public class RewardsScreen implements Initializable {
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
             vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
-            //vbox.getChildren().add(FXMLLoader.load(getClass().getResource("reward-pane.fxml")));
 
             setItemList();
             setUpRewardPanes();
@@ -85,6 +84,9 @@ public class RewardsScreen implements Initializable {
     }
 
     public void setUpRewardPanes() throws IOException {
+        RewardPane rp = new RewardPane();
+        rp.resetN();
+
         Label costLabel;
         Label nameLabel;
         ImageView imageView;

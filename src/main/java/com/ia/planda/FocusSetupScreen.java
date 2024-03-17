@@ -6,16 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class FocusSetupScreen implements Initializable {
     @FXML
@@ -34,6 +38,10 @@ public class FocusSetupScreen implements Initializable {
     public Label rewardLabel;
     @FXML
     public Label pointsLabel;
+    @FXML
+    public ColorPicker colorPicker;
+    @FXML
+    public Rectangle wallPreview;
     private Cache cache = new Cache();
 
     public FocusSetupScreen() throws IOException {
@@ -62,8 +70,27 @@ public class FocusSetupScreen implements Initializable {
             barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
             PointTracker pt = new PointTracker();
             pointsLabel.setText("Points: " + pt.getPoints());
+
+            colorPicker.setVisible(false);
+            startButton.setLayoutX(105);
+
+            Scanner scan = new Scanner(new File("items.txt"));
+            scan.nextLine();
+            Scanner strScan = new Scanner(scan.nextLine());
+            strScan.useDelimiter(",");
+            while (strScan.hasNext()) {
+                if (strScan.next().equalsIgnoreCase("Wallpaper colors")) {
+                    colorPicker.setVisible(true);
+                    startButton.setLayoutX(171);
+                }
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void updateWallColor(ActionEvent event) throws FileNotFoundException {
+        wallPreview.setFill(colorPicker.getValue());
+        cache.setWallColor(colorPicker.getValue());
     }
 }

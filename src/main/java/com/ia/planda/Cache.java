@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 import java.io.*;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Cache {
     private static VBox vbox;
     private static TaskList taskList;
     private static Label pointsLabel;
+    private static Paint wallColor;
 
     private File file = new File("tasks.txt");
     private Scanner scan = new Scanner(file);
@@ -55,6 +58,14 @@ public class Cache {
     }
     public List<? extends Node> getTasksList() {
         return Cache.tasksList;
+    }
+
+    public Paint getWallColor() {
+        return wallColor;
+    }
+
+    public void setWallColor(Paint wallColor) {
+        Cache.wallColor = wallColor;
     }
 
     public void setUpTaskList() throws IOException {
