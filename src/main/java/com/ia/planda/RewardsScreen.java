@@ -103,7 +103,7 @@ public class RewardsScreen implements Initializable {
         nameLabel = (Label)itemList.get(i).get(0);
         nameLabel.setText("Flower pot");
         costLabel = (Label)itemList.get(i).get(1);
-        costLabel.setText("10 pts");
+        costLabel.setText("20 pts");
         imageView = (ImageView)itemList.get(i).get(2);
         image = new Image("flower.png");
         imageView.setImage(image);
@@ -113,7 +113,7 @@ public class RewardsScreen implements Initializable {
         nameLabel = (Label)itemList.get(i).get(0);
         nameLabel.setText("Bookshelf");
         costLabel = (Label)itemList.get(i).get(1);
-        costLabel.setText("30 pts");
+        costLabel.setText("75 pts");
         imageView = (ImageView)itemList.get(i).get(2);
         image = new Image("bookshelf.png");
         imageView.setImage(image);
@@ -125,7 +125,7 @@ public class RewardsScreen implements Initializable {
         nameLabel.setText("Wallpaper colors");
         //get the option to choose between different wallpaper colors (white, black, red, blue, etc.)
         costLabel = (Label)itemList.get(i).get(1);
-        costLabel.setText("60 pts");
+        costLabel.setText("150 pts");
         imageView = (ImageView)itemList.get(i).get(2);
         image = new Image("panda study scene full.png");
         imageView.setImage(image);

@@ -49,10 +49,7 @@ public class RewardPane extends AnchorPane implements Initializable {
 
     /*
         I used this array instead of just nameLabel.getText() in the initializer because these RewardPanes are initialized
-        before the RewardsScreen finishes initializing, which means that their rewardNames haven't been set yet. It's true
-        that I could JUST use the n and arrays system to set up all the RewardPanes, but I think that would get more
-        confusing than simply having the RewardsScreen take care of it.
-        //TODO actually the more I think about it, using only n and arrays makes way more sense. REDO IT
+        before the RewardsScreen finishes initializing, which means that their rewardNames haven't been set yet.
      */
 
     private PointTracker pt = new PointTracker();

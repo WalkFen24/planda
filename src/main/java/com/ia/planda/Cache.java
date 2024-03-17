@@ -19,6 +19,7 @@ public class Cache {
     private static TaskList taskList;
     private static Label pointsLabel;
     private static Paint wallColor;
+    private static Label congratsLabel;
 
     private File file = new File("tasks.txt");
     private Scanner scan = new Scanner(file);
@@ -68,6 +69,14 @@ public class Cache {
         Cache.wallColor = wallColor;
     }
 
+    public Label getCongratsLabel() {
+        return congratsLabel;
+    }
+
+    public void setCongratsLabel(Label congratsLabel) {
+        Cache.congratsLabel = congratsLabel;
+    }
+
     public void setUpTaskList() throws IOException {
         //read the lines from the text file into the proper storage locations,
         // so it assigns the content of each line as the fields of each sequential TaskPane of the TaskList
@@ -112,8 +121,8 @@ public class Cache {
         fw.close();
 
         //read and print file contents to check that it was updated properly
-        System.out.println("---Text File Content---");
-        printTasksFile();
+        //System.out.println("---Text File Content---");
+        //printTasksFile();
     }
 
     public void writeLn(String str) throws IOException {

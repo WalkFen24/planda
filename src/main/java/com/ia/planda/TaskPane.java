@@ -1,20 +1,21 @@
 package com.ia.planda;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.*;
 
 public class TaskPane extends AnchorPane {
     @FXML
@@ -58,7 +59,7 @@ public class TaskPane extends AnchorPane {
         }
     }
 
-    public void onCompleteButtonClicked(ActionEvent event) throws IOException {
+    public void onCompleteButtonClicked(ActionEvent event) throws IOException, InterruptedException {
         if (taskAnchor.getParent().getClass() == VBox.class) {
             VBox parent = (VBox) taskAnchor.getParent();
             parent.getChildren().remove(this.taskAnchor);
@@ -77,6 +78,20 @@ public class TaskPane extends AnchorPane {
             }
             pt.incrPointsBy(pointIncr);
             cache.getPointsLabel().setText("Points: " + pt.getPoints());
+
+            //congratulations
+            cache.getCongratsLabel().setVisible(true);
+
+            Timer celebrationTimer = new Timer();
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    Platform.runLater(() -> {
+                        cache.getCongratsLabel().setVisible(false);
+                    });
+                }
+            };
+            celebrationTimer.schedule(timerTask, 2500);
         }
     }
 

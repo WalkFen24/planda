@@ -40,6 +40,8 @@ public class TaskListScreen implements Initializable {
     public AnchorPane mainAnchorPane;
     @FXML
     public Label pointsLabel;
+    @FXML
+    public Label congratsLabel;
     private static TaskList taskList;
 
     //TODO replace almost all public variables with private
@@ -77,6 +79,8 @@ public class TaskListScreen implements Initializable {
                 cache.setUpTaskList();
 
                 cache.setPointsLabel(pointsLabel);
+
+                cache.setCongratsLabel(congratsLabel);
 
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
