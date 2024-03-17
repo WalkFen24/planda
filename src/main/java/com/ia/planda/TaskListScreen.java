@@ -36,11 +36,14 @@ public class TaskListScreen implements Initializable {
     public RadioButton importanceRb;
     @FXML
     public AnchorPane mainAnchorPane;
+    @FXML
+    public Label pointsLabel;
     private static TaskList taskList;
 
     //TODO replace almost all public variables with private
 
     private static boolean isFirstRun = true;
+
     int numTasks = 1;
     //int completeTasks = 0;
     Cache cache = new Cache();
@@ -71,11 +74,16 @@ public class TaskListScreen implements Initializable {
                 taskList = new TaskList(vbox);
                 cache.setUpTaskList();
 
+                cache.setPointsLabel(pointsLabel);
+
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
                 isFirstRun = false;
             } else {
                 vbox.getChildren().setAll(cache.getTasksList());
             }
+
+            PointTracker pt = new PointTracker();
+            pointsLabel.setText("Points: " + pt.getPoints());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

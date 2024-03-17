@@ -2,6 +2,7 @@ package com.ia.planda;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
@@ -14,6 +15,7 @@ public class Cache {
     private static List<? extends Node> tasksList;
     private static VBox vbox;
     private static TaskList taskList;
+    private static Label pointsLabel;
 
     private File file = new File("tasks.txt");
     private Scanner scan = new Scanner(file);
@@ -38,6 +40,14 @@ public class Cache {
 
     public void setInitFocusTime(int initFocusTime) {
         Cache.initFocusTime = initFocusTime;
+    }
+
+    public Label getPointsLabel() {
+        return pointsLabel;
+    }
+
+    public void setPointsLabel(Label pointsLabel) {
+        Cache.pointsLabel = pointsLabel;
     }
 
     public void setTasksList(List<? extends Node> tasksList) {
@@ -105,5 +115,4 @@ public class Cache {
             System.out.println(scan.nextLine());
         }
     }
-
 }

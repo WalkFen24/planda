@@ -45,6 +45,7 @@ public class RewardPane extends AnchorPane implements Initializable {
     private FileWriter fw = new FileWriter("items.txt", true);
     private static int n = -1;
     private String[] rewardNames = {"Flower pot", "Bookshelf", "Wallpaper colors"};
+    private PointTracker pt = new PointTracker();
 
 
     public RewardPane() throws IOException {
@@ -54,17 +55,21 @@ public class RewardPane extends AnchorPane implements Initializable {
 
     public void onBuyButtonClicked(ActionEvent event) throws IOException {
         //check for adequate points, if enough, remove the cost from it and set owned to true
+        Scanner costScan = new Scanner(costLabel.getText());
         if (owned) {
             System.out.println("You already own this one.");
+        } else if (pt.getPoints() < costScan.nextInt()) {
+            System.out.println("You don't have enough points for this item quite yet. Keep earning points, then come back!");
         } else {
             owned = true;
             System.out.println(nameLabel.getText() + " purchased");
 
             Scanner scan = new Scanner(file);
             String str = scan.nextLine();
+            String str2 = scan.nextLine() + "\n" + scan.nextLine();
 
             fw = new FileWriter(file);
-            fw.write(str + nameLabel.getText() + ",");
+            fw.write(str + nameLabel.getText() + ",\n" + str2);
             fw.close();
         }
     }
@@ -77,9 +82,11 @@ public class RewardPane extends AnchorPane implements Initializable {
 
             Scanner scan = new Scanner(file);
             String str = scan.nextLine();
+            scan.nextLine();
+            String str3 = scan.nextLine();
 
             fw = new FileWriter(file);
-            fw.write(str + "\n" + nameLabel.getText());
+            fw.write(str + "\n" + nameLabel.getText() + "\n" + str3);
             fw.close();
         }
     }
@@ -107,7 +114,7 @@ public class RewardPane extends AnchorPane implements Initializable {
             }
 
             //checks if this reward has been saved as selected
-            if (scan.hasNext()) {
+            if (scan.hasNext() && n < 3) {
                 if (scan.nextLine().equalsIgnoreCase(rewardNames[n])) {
                     selected = true;
                     System.out.println(rewardNames[n] + " selection loaded");

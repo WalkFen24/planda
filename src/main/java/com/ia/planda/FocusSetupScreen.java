@@ -30,7 +30,11 @@ public class FocusSetupScreen implements Initializable {
     public Slider timeSlider;
     @FXML
     public AnchorPane mainAnchorPane;
-    Cache cache = new Cache();
+    @FXML
+    public Label rewardLabel;
+    @FXML
+    public Label pointsLabel;
+    private Cache cache = new Cache();
 
     public FocusSetupScreen() throws IOException {
     }
@@ -46,6 +50,7 @@ public class FocusSetupScreen implements Initializable {
 
     public void updateTimeLabel(MouseEvent mouseEvent) {
         timeLabel.setText((int)timeSlider.getValue() + " min");
+        rewardLabel.setText((int)timeSlider.getValue()/2 + " pts");
     }
 
 
@@ -55,6 +60,8 @@ public class FocusSetupScreen implements Initializable {
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
             mainAnchorPane.getChildren().add(barAnchor);
             barAnchor.setLayoutY(mainAnchorPane.getPrefHeight() - barAnchor.getPrefHeight()); //~560.0 for 600 height
+            PointTracker pt = new PointTracker();
+            pointsLabel.setText("Points: " + pt.getPoints());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

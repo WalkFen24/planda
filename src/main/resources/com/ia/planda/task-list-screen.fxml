@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
    <children>
-      <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="13.0" layoutY="14.0" prefHeight="507.0" prefWidth="312.0">
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="13.0" layoutY="32.0" prefHeight="489.0" prefWidth="312.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
@@ -74,5 +74,10 @@
             </HBox>
          </children>
       </AnchorPane>
+      <Label fx:id="pointsLabel" layoutX="13.0" layoutY="5.0" prefHeight="25.0" prefWidth="312.0" text="Points: 0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -13,10 +13,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -46,6 +48,7 @@ public class FocusScreen implements Initializable {
 
     public static int i;
     public static int period;
+    PointTracker pt = new PointTracker();
 
     public FocusScreen() throws IOException {
     }
@@ -87,7 +90,12 @@ public class FocusScreen implements Initializable {
                     if (progressBar.getProgress() <= 0) {
                         cancel();
                         timer.cancel();
-                        System.out.println("done");
+                        try {
+                            pt.incrPointsBy(cache.getInitFocusTime()/2);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        //cache.getInitFocusTime()/2
                     }
                 });
                 i += 1000;

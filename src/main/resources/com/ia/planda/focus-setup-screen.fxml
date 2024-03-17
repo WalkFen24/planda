@@ -20,13 +20,24 @@
             <Insets />
          </opaqueInsets>
       </ButtonBar>
-      <ImageView fitHeight="301.0" fitWidth="310.0" layoutX="12.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="246.0" fitWidth="188.0" layoutX="78.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../panda front.png" />
          </image></ImageView>
       <Slider fx:id="timeSlider" layoutX="19.0" layoutY="482.0" max="180.0" min="10.0" onMouseDragged="#updateTimeLabel" prefHeight="14.0" prefWidth="297.0" showTickLabels="true" showTickMarks="true" />
-      <Label layoutX="104.0" layoutY="423.0" text="Length of focus session:" />
-      <Label fx:id="timeLabel" alignment="CENTER" layoutX="24.0" layoutY="440.0" prefHeight="31.0" prefWidth="290.0" text="10 min" textAlignment="CENTER">
+      <Label layoutX="24.0" layoutY="423.0" text="Length of focus session:" />
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="24.0" layoutY="440.0" prefHeight="31.0" prefWidth="127.0" text="10 min" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="219.0" layoutY="423.0" text="Reward:" />
+      <Label fx:id="rewardLabel" alignment="CENTER" layoutX="186.0" layoutY="440.0" prefHeight="31.0" prefWidth="109.0" text="5 pts" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="pointsLabel" alignment="CENTER_RIGHT" layoutX="146.0" layoutY="14.0" prefHeight="31.0" prefWidth="170.0" text="Points: 0" textAlignment="RIGHT">
          <font>
             <Font size="21.0" />
          </font>

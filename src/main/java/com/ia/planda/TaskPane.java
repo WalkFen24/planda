@@ -39,9 +39,12 @@ public class TaskPane extends AnchorPane {
     public VBox taskVbox;
     @FXML
     public Button addSubtaskButton;
+    @FXML
+    public TextField importanceText;
 
     TaskList taskList;
     Cache cache;
+    PointTracker pt = new PointTracker();
 
 
     public TaskPane() throws IOException {
@@ -55,10 +58,25 @@ public class TaskPane extends AnchorPane {
         }
     }
 
-    public void onCompleteButtonClicked(ActionEvent event) {
+    public void onCompleteButtonClicked(ActionEvent event) throws IOException {
         if (taskAnchor.getParent().getClass() == VBox.class) {
             VBox parent = (VBox) taskAnchor.getParent();
             parent.getChildren().remove(this.taskAnchor);
+            int pointIncr = 5;
+            if (datePicker.getValue() != null) {
+                LocalDate ld = LocalDate.now();
+                pointIncr += (datePicker.getValue().getDayOfYear() - ld.getDayOfYear());
+            }
+            try {
+                int val = Integer.parseInt(importanceText.getText());
+                if (val > 0 && val < 11) {
+                    pointIncr += val;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Importance was not an integer.");
+            }
+            pt.incrPointsBy(pointIncr);
+            cache.getPointsLabel().setText("Points: " + pt.getPoints());
         }
     }
 
@@ -128,4 +146,5 @@ public class TaskPane extends AnchorPane {
         cache.updateFile();
         //numTasks++;
     }
+
 }
