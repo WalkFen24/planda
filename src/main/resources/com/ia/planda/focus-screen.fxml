@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusScreen">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.FocusScreen">
    <children>
       <ButtonBar fx:id="buttonBar2" buttonMinWidth="50.0" buttonOrder="U" layoutX="1.0" layoutY="520.0" prefHeight="40.0" prefWidth="335.0">
          <buttons>
@@ -58,7 +58,7 @@
       </AnchorPane>
       <ProgressBar fx:id="progressBar" layoutX="8.0" layoutY="490.0" prefHeight="25.0" prefWidth="319.0" progress="0.15" />
       <Label layoutX="125.0" layoutY="469.0" text="Time remaining:" />
-      <Label fx:id="timeLabel" layoutX="137.0" layoutY="487.0" text="10 min">
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="7.0" layoutY="487.0" prefHeight="31.0" prefWidth="319.0" text="10 min" textAlignment="CENTER">
          <font>
             <Font size="21.0" />
          </font>

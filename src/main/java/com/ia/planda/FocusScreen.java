@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -42,11 +43,20 @@ public class FocusScreen implements Initializable {
     public ImageView bookshelfImageView;
     @FXML
     public Rectangle wallShape;
+    @FXML
+    public ImageView pandaDeskImageView;
+    private Image[] imageArr = {
+            new Image("panda study clap 1.png"),
+            new Image("panda study clap 2.png"),
+            new Image("panda study clap 3.png"),
+            new Image("panda study clap 2.png"),
+    };
 
     private static boolean wallColors;
 
     public Cache cache = new Cache();
     public Timer timer = new Timer();
+    public Timer celebrationTimer = new Timer();
 
     public static int i;
     public static int period;
@@ -73,6 +83,7 @@ public class FocusScreen implements Initializable {
 
         timeLabel.setText(cache.getInitFocusTime() + " min");
         progressBar.setProgress(1);
+
         try {
             AnchorPane barAnchor = FXMLLoader.load(getClass().getResource("navigation-bar.fxml"));
             mainAnchorPane.getChildren().add(barAnchor);
@@ -103,7 +114,6 @@ public class FocusScreen implements Initializable {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                //System.out.println(i);
                 Platform.runLater(() -> {
                     timeLabel.setText(timeToString(period-i));
                     progressBar.setProgress((double)(period-i)/period);
@@ -112,10 +122,10 @@ public class FocusScreen implements Initializable {
                         timer.cancel();
                         try {
                             pt.incrPointsBy(cache.getInitFocusTime()/2);
+                            celebrate();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        //cache.getInitFocusTime()/2
                     }
                 });
                 i += 1000;
@@ -131,4 +141,35 @@ public class FocusScreen implements Initializable {
         return (minutes + ":" + seconds);
     }
 
+    private int t;
+    public void celebrate() {
+        timeLabel.setText("YOU DID IT!!!");
+
+        t = 5000;
+        i = 0;
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    pandaDeskImageView.setImage(imageArr[i]);
+                    i = nextIndex(imageArr.length, i);
+                    if (t <= 0) {
+                        cancel();
+                        celebrationTimer.cancel();
+                        pandaDeskImageView.setImage(imageArr[0]);
+                    }
+                });
+                t -= 100;
+            }
+        };
+        celebrationTimer.scheduleAtFixedRate(timerTask, 100, 70);
+    }
+
+    private int nextIndex(int arrayLength, int pointer) {
+        if (pointer == arrayLength - 1) {
+            return 0;
+        } else {
+            return (pointer + 1);
+        }
+    }
 }

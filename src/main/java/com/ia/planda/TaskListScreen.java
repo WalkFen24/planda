@@ -27,6 +27,8 @@ public class TaskListScreen implements Initializable {
     @FXML
     public Button taskListButton;
     @FXML
+    public Button motiveButton;
+    @FXML
     public Button addButton;
     @FXML
     public VBox vbox;
@@ -105,15 +107,16 @@ public class TaskListScreen implements Initializable {
     public void onTaskListButtonClicked(ActionEvent event) throws IOException {
     }
 
-    public void onMotiveButtonClicked(ActionEvent event) {
-        //TODO remember to update with the NavigationBar class!
-
+    public void onMotiveButtonClicked(ActionEvent event) throws IOException {
         cache.setTasksList(vbox.getChildren());
+
+        Stage stage = (Stage) motiveButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("motive-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
     }
 
     public void onFocusButtonClicked(ActionEvent event) throws IOException {
-        //TODO remember to update with the NavigationBar class!
-
         cache.setTasksList(vbox.getChildren());
 
         Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
@@ -123,7 +126,6 @@ public class TaskListScreen implements Initializable {
     }
 
     public void onRewardsButtonClicked(ActionEvent event) throws IOException {
-        //TODO remember to update with the NavigationBar class!
         cache.setTasksList(vbox.getChildren());
 
         Stage stage = (Stage) rewardsButton.getScene().getWindow(); //gets the stage
@@ -133,7 +135,6 @@ public class TaskListScreen implements Initializable {
     }
 
     public void onPlanButtonClicked(ActionEvent actionEvent) throws IOException {
-        //TODO remember to update with the NavigationBar class!
         cache.setTasksList(vbox.getChildren());
 
         Stage stage = (Stage) planButton.getScene().getWindow(); //gets the stage
@@ -154,18 +155,4 @@ public class TaskListScreen implements Initializable {
     }
 
      */
-
-
-    public void initTaskList() throws IOException {
-        //file.seek(0);
-        taskList.setTaskNameText(0, "Testing");
-
-        /*
-        //set up each row
-        while(file.length() - file.getFilePointer() > 7) {
-
-        }
-
-         */
-    }
 }

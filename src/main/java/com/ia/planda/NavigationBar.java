@@ -44,7 +44,11 @@ public class NavigationBar extends AnchorPane {
         stage.show();
     }
 
-    public void onMotiveButtonClicked(ActionEvent event) {
+    public void onMotiveButtonClicked(ActionEvent event) throws IOException {
+        Stage stage = (Stage) motiveButton.getScene().getWindow(); //gets the stage
+        Parent root = FXMLLoader.load(getClass().getResource("motive-screen.fxml"));
+        stage.getScene().setRoot(root); //changes the root node
+        stage.show();
     }
 
     public void onRewardsButtonClicked(ActionEvent event) throws IOException {

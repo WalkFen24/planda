@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="point functionality">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="lots of debugging + wall color reward">
+      <change afterPath="$PROJECT_DIR$/quotes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/motive-screen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/panda study clap 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/panda study clap 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/panda study clap 3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Cache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/PointTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PointTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/MotiveScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/MotiveScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/focus-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/focus-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/focus-setup-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/focus-setup-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +72,14 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda" />
-      <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources\com\ia\planda" />
+      <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources\com\ia\planda" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources" />
       <recent name="C:\Users\walkfen24\Desktop\planda\src\main\resources" />
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda" />
       <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\java\com\ia\planda" />
-      <recent name="C:\Users\fdwal\OneDrive\Desktop\planda\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.ia.planda" />
@@ -338,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710641413161</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="lots of debugging + wall color reward">
+      <created>1710653319726</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1710653319726</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +386,8 @@
     <MESSAGE value="graphsics update" />
     <MESSAGE value="rewards persistent storage" />
     <MESSAGE value="point functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="point functionality" />
+    <MESSAGE value="lots of debugging + wall color reward" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of debugging + wall color reward" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
