@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="debugging, adding motivation after completing a task">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/navigation-bar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/navigation-bar.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
@@ -430,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710710351657</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it">
+      <created>1710731829583</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1710731829583</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -445,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates to the button bar functionality, short term saving of tasks, persistent storage code updated" />
     <MESSAGE value="debugging the file functionality" />
     <MESSAGE value="debugging" />
     <MESSAGE value="adding cache functionality" />
@@ -470,7 +474,8 @@
     <MESSAGE value="updating end focus session functionality" />
     <MESSAGE value="exe file built!" />
     <MESSAGE value="debugging, adding motivation after completing a task" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging, adding motivation after completing a task" />
+    <MESSAGE value="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it" />
+    <option name="LAST_COMMIT_MESSAGE" value="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
