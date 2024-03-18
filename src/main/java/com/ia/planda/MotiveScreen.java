@@ -20,13 +20,13 @@ import java.util.Scanner;
 
 public class MotiveScreen implements Initializable {
     @FXML
-    public Button okayButton;
+    private Button okayButton;
     @FXML
-    public ImageView pandaImageView;
+    private ImageView pandaImageView;
     @FXML
-    public Label motivationLabel;
+    private Label motivationLabel;
     @FXML
-    public AnchorPane mainAnchorPane;
+    private AnchorPane mainAnchorPane;
     private Random rand = new Random();
     private ArrayList<String> messages = new ArrayList<>();
     //most of the quotes were taken from https://resource.hix.ai/messages/inspirational-messages-for-students

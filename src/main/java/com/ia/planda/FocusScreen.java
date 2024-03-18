@@ -29,19 +29,19 @@ public class FocusScreen implements Initializable {
     //Resource used to learn about Timers: https://egandunning.com/projects/timemanagement-timer.html
 
     @FXML
-    public Button endButton;
+    private Button endButton;
     @FXML
-    public Button addTimeButton;
+    private Button addTimeButton;
     @FXML
-    public ProgressBar progressBar;
+    private ProgressBar progressBar;
     @FXML
-    public Label timeLabel;
+    private Label timeLabel;
     @FXML
-    public AnchorPane mainAnchorPane;
+    private AnchorPane mainAnchorPane;
     @FXML
-    public ImageView flowerImageView;
+    private ImageView flowerImageView;
     @FXML
-    public ImageView bookshelfImageView;
+    private ImageView bookshelfImageView;
     @FXML
     public Rectangle wallShape;
     @FXML
@@ -53,15 +53,13 @@ public class FocusScreen implements Initializable {
             new Image("panda study clap 2.png"),
     };
 
-    private static boolean wallColors;
+    private Cache cache = new Cache();
+    private Timer timer = new Timer();
+    private Timer celebrationTimer = new Timer();
 
-    public Cache cache = new Cache();
-    public Timer timer = new Timer();
-    public Timer celebrationTimer = new Timer();
-
-    public static int i;
-    public static int period;
-    PointTracker pt = new PointTracker();
+    private static int i;
+    private static int period;
+    private PointTracker pt = new PointTracker();
 
     public FocusScreen() throws IOException {
     }

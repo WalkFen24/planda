@@ -22,14 +22,14 @@ import java.util.Scanner;
 
 public class RewardsScreen implements Initializable {
     @FXML
-    public AnchorPane mainAnchorPane;
+    private AnchorPane mainAnchorPane;
     @FXML
-    public VBox vbox;
+    private VBox vbox;
     @FXML
-    public Label pointsLabel;
-    public static final int rewardsNum = 4;
+    private Label pointsLabel;
+    private static final int rewardsNum = 4;
     private Cache cache = new Cache();
-    public ArrayList<ArrayList<Node>> itemList = new ArrayList<>();
+    private ArrayList<ArrayList<Node>> itemList = new ArrayList<>();
     //private File file = new File("items.txt");
     //private Scanner scan = new Scanner(file);
     //private FileWriter fw = new FileWriter("items.txt", false);

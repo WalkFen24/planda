@@ -15,7 +15,7 @@ public class Main extends Application {
     private File file = new File("tasks.txt");
     private Scanner scan = new Scanner(file);
 
-    public static Cache cache;
+    private static Cache cache;
 
     static {
         try {
@@ -32,7 +32,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("task-list-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Planda Task List");
+        stage.setTitle("Planda");
         stage.setScene(scene);
         stage.show();
         stage.setOnCloseRequest(event -> {

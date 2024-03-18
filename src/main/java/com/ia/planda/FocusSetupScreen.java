@@ -23,25 +23,21 @@ import java.util.Scanner;
 
 public class FocusSetupScreen implements Initializable {
     @FXML
-    public Button startButton;
+    private Button startButton;
     @FXML
-    public Label timeLabel;
+    private Label timeLabel;
     @FXML
-    public Button focusButton;
+    private Slider timeSlider;
     @FXML
-    public Button taskListButton;
+    private AnchorPane mainAnchorPane;
     @FXML
-    public Slider timeSlider;
+    private Label rewardLabel;
     @FXML
-    public AnchorPane mainAnchorPane;
+    private Label pointsLabel;
     @FXML
-    public Label rewardLabel;
+    private ColorPicker colorPicker;
     @FXML
-    public Label pointsLabel;
-    @FXML
-    public ColorPicker colorPicker;
-    @FXML
-    public Rectangle wallPreview;
+    private Rectangle wallPreview;
     private Cache cache = new Cache();
 
     public FocusSetupScreen() throws IOException {

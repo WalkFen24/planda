@@ -14,11 +14,11 @@ import java.util.ResourceBundle;
 public class PlanScreen implements Initializable {
 
     @FXML
-    public AnchorPane mainAnchorPane;
+    private AnchorPane mainAnchorPane;
     @FXML
-    public AnchorPane planTasksAnchor;
+    private AnchorPane planTasksAnchor;
     @FXML
-    public VBox vbox;
+    private VBox vbox;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

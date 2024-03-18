@@ -19,35 +19,35 @@ import java.util.*;
 
 public class TaskPane extends AnchorPane {
     @FXML
-    public TextField taskNameText;
+    private TextField taskNameText;
     @FXML
-    public DatePicker datePicker;
+    private DatePicker datePicker;
     @FXML
-    public TextArea taskDetailsText;
+    private TextArea taskDetailsText;
     @FXML
-    public ButtonBar taskButtonBar;
+    private ButtonBar taskButtonBar;
     @FXML
-    public Button deleteButton;
+    private Button deleteButton;
     @FXML
-    public Button completeButton;
+    private Button completeButton;
     @FXML
-    public TitledPane taskPane;
+    private TitledPane taskPane;
     @FXML
-    public AnchorPane taskAnchor;
+    private AnchorPane taskAnchor;
     @FXML
-    public AnchorPane titledAnchor;
+    private AnchorPane titledAnchor;
     @FXML
-    public VBox taskVbox;
+    private VBox taskVbox;
     @FXML
-    public Button addSubtaskButton;
+    private Button addSubtaskButton;
     @FXML
-    public TextField importanceText;
+    private TextField importanceText;
     @FXML
-    public TextField timeReqText;
+    private TextField timeReqText;
 
-    TaskList taskList;
-    Cache cache;
-    PointTracker pt = new PointTracker();
+    private TaskList taskList;
+    private Cache cache;
+    private PointTracker pt = new PointTracker();
 
 
     public TaskPane() throws IOException {

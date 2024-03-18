@@ -19,27 +19,27 @@ import java.util.Scanner;
 public class RewardPane extends AnchorPane implements Initializable {
 
     @FXML
-    public AnchorPane itemAnchor;
+    private AnchorPane itemAnchor;
     @FXML
-    public TitledPane itemPane;
+    private TitledPane itemPane;
     @FXML
-    public VBox itemVbox;
+    private VBox itemVbox;
     @FXML
-    public Label nameLabel;
+    private Label nameLabel;
     @FXML
-    public Label costLabel;
+    private Label costLabel;
     @FXML
-    public ImageView imageView;
+    private ImageView imageView;
     @FXML
-    public ButtonBar itemButtonBar;
+    private ButtonBar itemButtonBar;
     @FXML
-    public Button buyButton;
+    private Button buyButton;
     @FXML
-    public Button selectButton;
+    private Button selectButton;
 
     private Cache cache;
-    public boolean owned = false;
-    public boolean selected = false;
+    private boolean owned = false;
+    private boolean selected = false;
     private File file = new File("items.txt");
     private Scanner scan = new Scanner(file);
     private Scanner strScan;

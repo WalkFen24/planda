@@ -20,12 +20,18 @@ import java.io.RandomAccessFile;
 
 public class NavigationBar extends AnchorPane {
     
-    @FXML public Button focusButton;
-    @FXML public Button taskListButton;
-    @FXML public HBox navigationBar;
-    @FXML public Button motiveButton;
-    @FXML public Button planButton;
-    @FXML public Button rewardsButton;
+    @FXML
+    private Button focusButton;
+    @FXML
+    private Button taskListButton;
+    @FXML
+    private HBox navigationBar;
+    @FXML
+    private Button motiveButton;
+    @FXML
+    private Button planButton;
+    @FXML
+    private Button rewardsButton;
 
     public NavigationBar() {
     }

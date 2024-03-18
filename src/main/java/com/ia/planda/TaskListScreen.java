@@ -17,40 +17,30 @@ import java.util.ResourceBundle;
 public class TaskListScreen implements Initializable {
 
     @FXML
-    private final ToggleGroup group = new ToggleGroup();
+    private Button focusButton;
     @FXML
-    public Button focusButton;
+    private Button rewardsButton;
     @FXML
-    public Button rewardsButton;
+    private Button planButton;
     @FXML
-    public Button planButton;
+    private Button taskListButton;
     @FXML
-    public Button taskListButton;
+    private Button motiveButton;
     @FXML
-    public Button motiveButton;
+    private Button addButton;
     @FXML
-    public Button addButton;
+    private VBox vbox;
     @FXML
-    public VBox vbox;
+    private AnchorPane mainAnchorPane;
     @FXML
-    public RadioButton dueDateRb;
+    private Label pointsLabel;
     @FXML
-    public RadioButton importanceRb;
-    @FXML
-    public AnchorPane mainAnchorPane;
-    @FXML
-    public Label pointsLabel;
-    @FXML
-    public Label congratsLabel;
+    private Label congratsLabel;
     private static TaskList taskList;
 
-    //TODO replace almost all public variables with private
-
-    private static boolean isFirstRun = true;
-
-    int numTasks = 1;
+    private int numTasks = 1;
     //int completeTasks = 0;
-    Cache cache = new Cache();
+    private Cache cache = new Cache();
 
     //private RandomAccessFile file = new RandomAccessFile(new File("tasks.txt"), "r");
 
@@ -71,22 +61,20 @@ public class TaskListScreen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            if (isFirstRun) {
+            if (vbox.getChildren().isEmpty()) {
                 vbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-                cache.setTasksList(vbox.getChildren());
-                cache.setVbox(vbox);
-                taskList = new TaskList(vbox);
-                cache.setUpTaskList();
-
-                cache.setPointsLabel(pointsLabel);
-
-                cache.setCongratsLabel(congratsLabel);
 
                 //taskList.printElementIndexes(); //this is for myself, for the coding process and debugging purposes
-                isFirstRun = false;
             } else {
                 vbox.getChildren().setAll(cache.getTasksList());
             }
+            cache.setTasksList(vbox.getChildren());
+            cache.setVbox(vbox);
+            taskList = new TaskList(vbox);
+            cache.setUpTaskList();
+
+            cache.setPointsLabel(pointsLabel);
+            cache.setCongratsLabel(congratsLabel);
 
             PointTracker pt = new PointTracker();
             pointsLabel.setText("Points: " + pt.getPoints());
@@ -113,6 +101,7 @@ public class TaskListScreen implements Initializable {
 
     public void onMotiveButtonClicked(ActionEvent event) throws IOException {
         cache.setTasksList(vbox.getChildren());
+        cache.updateFile();
 
         Stage stage = (Stage) motiveButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("motive-screen.fxml"));
@@ -122,6 +111,7 @@ public class TaskListScreen implements Initializable {
 
     public void onFocusButtonClicked(ActionEvent event) throws IOException {
         cache.setTasksList(vbox.getChildren());
+        cache.updateFile();
 
         Stage stage = (Stage) focusButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("focus-setup-screen.fxml"));
@@ -131,6 +121,7 @@ public class TaskListScreen implements Initializable {
 
     public void onRewardsButtonClicked(ActionEvent event) throws IOException {
         cache.setTasksList(vbox.getChildren());
+        cache.updateFile();
 
         Stage stage = (Stage) rewardsButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("rewards-screen.fxml"));
@@ -140,6 +131,7 @@ public class TaskListScreen implements Initializable {
 
     public void onPlanButtonClicked(ActionEvent actionEvent) throws IOException {
         cache.setTasksList(vbox.getChildren());
+        cache.updateFile();
 
         Stage stage = (Stage) planButton.getScene().getWindow(); //gets the stage
         Parent root = FXMLLoader.load(getClass().getResource("plan-screen.fxml"));
