@@ -9,10 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="Removed omitted features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/navigation-bar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/navigation-bar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ia/planda/task-list-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/planda_jar/planda.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/planda_jar/planda.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -435,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710731829583</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Removed omitted features">
+      <created>1710732136575</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1710732136575</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,7 +460,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debugging the file functionality" />
     <MESSAGE value="debugging" />
     <MESSAGE value="adding cache functionality" />
     <MESSAGE value="debugging persistent storage" />
@@ -475,7 +484,8 @@
     <MESSAGE value="exe file built!" />
     <MESSAGE value="debugging, adding motivation after completing a task" />
     <MESSAGE value="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it" />
+    <MESSAGE value="Removed omitted features" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed omitted features" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

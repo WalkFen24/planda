@@ -42,6 +42,8 @@ public class TaskPane extends AnchorPane {
     public Button addSubtaskButton;
     @FXML
     public TextField importanceText;
+    @FXML
+    public TextField timeReqText;
 
     TaskList taskList;
     Cache cache;
@@ -69,12 +71,11 @@ public class TaskPane extends AnchorPane {
                 pointIncr += (datePicker.getValue().getDayOfYear() - ld.getDayOfYear());
             }
             try {
-                int val = Integer.parseInt(importanceText.getText());
-                if (val > 0 && val < 11) {
-                    pointIncr += val;
-                }
+                int val = Integer.parseInt(timeReqText.getText());
+                pointIncr += val / 2;
+                //so they will get 5 points for every 10 minutes of work time, just like in the focus sessions
             } catch (NumberFormatException e) {
-                System.out.println("Importance was not an integer.");
+                System.out.println("Estimate time cost was not an integer.");
             }
             pt.incrPointsBy(pointIncr);
             cache.getPointsLabel().setText("Points: " + pt.getPoints());

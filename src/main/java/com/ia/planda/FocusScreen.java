@@ -84,8 +84,11 @@ public class FocusScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //period = 60000 * cache.getInitFocusTime();
-        period = 10000; //TODO delete this and uncomment the above
+        if (cache.getInitFocusTime() == 10) {
+            period = 10000; //TODO delete this and keep only the below; this is just for demo purposes
+        } else {
+            period = 60000 * cache.getInitFocusTime();
+        }
 
         timeLabel.setText(cache.getInitFocusTime() + " min");
         progressBar.setProgress(1);
