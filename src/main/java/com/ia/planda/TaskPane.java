@@ -61,6 +61,14 @@ public class TaskPane extends AnchorPane {
         }
     }
 
+    public void onAddSubtaskButtonClicked(ActionEvent actionEvent) throws IOException {
+        taskVbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
+        taskList = new TaskList(cache.getVbox());
+        taskList.setTaskList();
+        taskList.printTaskNames();
+        cache.updateFile();
+    }
+
     public void onCompleteButtonClicked(ActionEvent event) throws IOException, InterruptedException {
         if (taskAnchor.getParent().getClass() == VBox.class) {
             VBox parent = (VBox) taskAnchor.getParent();
@@ -152,15 +160,6 @@ public class TaskPane extends AnchorPane {
 
     public void setTitledAnchor(AnchorPane titledAnchor) {
         this.titledAnchor = titledAnchor;
-    }
-
-    public void onAddSubtaskButtonClicked(ActionEvent actionEvent) throws IOException {
-        taskVbox.getChildren().add(FXMLLoader.load(getClass().getResource("TaskPane.fxml")));
-        taskList = new TaskList(cache.getVbox());
-        taskList.setTaskList();
-        taskList.printTaskNames();
-        cache.updateFile();
-        //numTasks++;
     }
 
 }

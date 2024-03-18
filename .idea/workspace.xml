@@ -9,19 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="Final edits">
+    <list default="true" id="f84a11a5-2d1d-418f-a9ae-fd4944ef753c" name="Changes" comment="Final debugging and changing public variables to private">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/items.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/planda_jar/planda.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/planda_jar/planda.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/FocusSetupScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/MotiveScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/MotiveScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/NavigationBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/PlanScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/RewardsScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskListScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ia/planda/TaskPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
@@ -459,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710733954441</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Final debugging and changing public variables to private">
+      <created>1710756584258</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1710756584258</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding cache functionality" />
     <MESSAGE value="debugging persistent storage" />
     <MESSAGE value="fixed the filewriter issue" />
     <MESSAGE value="fixing the update file method" />
@@ -499,7 +496,8 @@
     <MESSAGE value="attempted to add mergeSort but running into issues and I don't have enough time to figure out what's wrong with it" />
     <MESSAGE value="Removed omitted features" />
     <MESSAGE value="Final edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final edits" />
+    <MESSAGE value="Final debugging and changing public variables to private" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final debugging and changing public variables to private" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
