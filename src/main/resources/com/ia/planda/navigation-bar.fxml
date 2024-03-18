@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="335.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.NavigationBar">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.NavigationBar">
    <children>
       <HBox fx:id="navigationBar" alignment="CENTER" prefHeight="40.0" prefWidth="335.0" spacing="10.0" style="-fx-background-color: #00A36C;">
          <children>
@@ -13,12 +13,7 @@
                <font>
                   <Font size="13.0" />
                </font></Button>
-            <Button fx:id="planButton" mnemonicParsing="false" onAction="#onPlanButtonClicked" style="-fx-background-color: #5cd68d;" text="Plan">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motive">
+            <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motivation">
                <font>
                   <Font size="13.0" />
                </font></Button>

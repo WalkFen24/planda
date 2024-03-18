@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ia.planda.TaskListScreen">
    <children>
       <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="-1.0" layoutY="30.0" prefHeight="489.0" prefWidth="335.0">
         <content>
@@ -52,12 +52,7 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="planButton" mnemonicParsing="false" onAction="#onPlanButtonClicked" style="-fx-background-color: #5cd68d;" text="Plan">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motive">
+                  <Button fx:id="motiveButton" mnemonicParsing="false" onAction="#onMotiveButtonClicked" style="-fx-background-color: #5cd68d;" text="Motivation">
                      <font>
                         <Font size="13.0" />
                      </font>

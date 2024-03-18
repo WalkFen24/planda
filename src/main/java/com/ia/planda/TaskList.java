@@ -11,6 +11,7 @@ import javafx.util.converter.LocalDateTimeStringConverter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskList extends ArrayList<ArrayList<Node>> {
@@ -30,6 +31,21 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
         TaskList.vboxTaskList = vboxTaskList;
         setTaskList();
     }
+
+    /*
+    public void sortTaskList(String sortType) {
+        if (sortType.equalsIgnoreCase("Due date")) {
+            mergeSort(getDueDateArr(), taskList.size());
+        } else if (sortType.equalsIgnoreCase("Importance")) {
+            int[] array = getImportanceArr();
+            System.out.println(Arrays.toString(array));
+            mergeSort(getImportanceArr(), taskList.size());
+        } else {
+            System.out.println("No valid type selected.");
+        }
+    }
+
+     */
 
 
 
@@ -72,6 +88,97 @@ public class TaskList extends ArrayList<ArrayList<Node>> {
             return getTaskList(task + 1);
         }
     }
+
+    /*
+    public int[] getDueDateArr() {
+        int[] dateDifs = new int[taskList.size()];
+        for (int i = 0; i < taskList.size(); i++) { //for each task
+            if (getDate(i) != null) {
+                LocalDate ld = LocalDate.now();
+                dateDifs[i] = (getDate(i).getDayOfYear() - ld.getDayOfYear());
+            } else {
+                dateDifs[i] = Integer.MAX_VALUE; //a task with no due date inputted will go at the end of the list.
+            }
+        }
+        return dateDifs;
+    }
+
+    public int[] getImportanceArr() {
+        int[] importanceArr = new int[taskList.size()];
+        int val;
+        for (int i = 0; i < taskList.size(); i++) { //for each task
+            try {
+                val = Integer.parseInt(getImportance(i));
+                if (val > 0 && val < 11) {
+                    importanceArr[i] = val;
+                } else {
+                    importanceArr[i] = 1; //a task with no valid importance inputted will go at the end of the list.
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Importance was not an integer.");
+                importanceArr[i] = 1; //a task with no valid importance inputted will go at the end of the list.
+            }
+        }
+        return importanceArr;
+    }
+
+    public void mergeSort(int[] arr, int length) {
+        //length inputted as a parameter to prevent needing to do arr.length over and over again
+
+        System.out.println("sorting");
+        //base case: length of array is 1 element
+        if (length < 2) {
+            return;
+        }
+            int mid = length / 2;
+            int[] l = new int[mid]; //left subarray
+            int[] r = new int[length - mid]; //right subarray
+
+            //populate the two subarrays by copying over the corresponding original array element values
+            for (int i = 0; i < mid; i++) {
+                l[i] = arr[i];
+            }
+            for (int i = mid; i < length; i++) {
+                r[i - mid] = arr[i];
+            }
+
+            //recursively keep splitting the subarrays into smaller subarrays until  they're all 1 element long
+            mergeSort(l, mid);
+            mergeSort(r, length - mid);
+
+            //start (recursively) merging all the subarrays back together
+            merge(arr, l, r, mid, length - mid);
+    }
+
+    public void merge(int[] arr, int[] l, int[] r, int leftIndex, int rightIndex) {
+        //where arr = the original array before splitting
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < leftIndex && j < rightIndex) {
+            if (l[i] <= r[j]) {
+                arr[k++] = l[i++];
+            } else {
+                arr[k++] = r[j++];
+            }
+        }
+        while (i < leftIndex) {
+            arr[k++] = l[i++];
+        }
+        while (j < rightIndex) {
+            arr[k++] = r[j++];
+        }
+    }
+
+
+     */
+
+
+
+
+
+
 
     public ArrayList<ArrayList<Node>> getTaskList() {
         return taskList;
